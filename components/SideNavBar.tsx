@@ -147,7 +147,7 @@ const SideNavBar = () => {
         </div>
         <List>
           {listItems.map((item) => (
-            <Link href={item.href}>
+            <Link href={item.href} key={item.text}>
               <ListItem button>
                 <ListItemIcon>
                   {item.icon}
