@@ -1,25 +1,30 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
-import pageVariants from '../animations/variants';
-import pageTransition from '../animations/transitions';
+import emailjs from 'emailjs-com';
 
-const StyledPage = styled.div`
-  position: absolute
-`;
+const Contact: React.FC = () => {
+  const sendEmail = async (e: any) => {
+    e.preventDefault();
+    try {
+      const result = await emailjs.sendForm('portfolio', 'portfolio_form', e.target, 'user_gSfkba0Rf5gMdNzGxHLxj');
+      console.log(result.text);
+    } catch (err) {
+      console.log(err.text);
+    }
+  };
 
-const Contact: React.FC = () => (
-  <StyledPage>
-    <motion.div
-      initial="intial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-    >
-      <h2>Contact</h2>
-    </motion.div>
-  </StyledPage>
-);
+  return (
+    <form className="contact-form" onSubmit={sendEmail}>
+      <label>Name</label>
+      <input type="text" name="name" />
+      <label>Email</label>
+      <input type="text" name="email" />
+      <label>Subject</label>
+      <input type="text" name="subject" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input type="submit" value="Send" />
+    </form>
+  );
+};
 
 export default Contact;

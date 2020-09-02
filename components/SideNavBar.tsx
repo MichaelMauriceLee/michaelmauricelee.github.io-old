@@ -19,10 +19,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   appBar: {
+    position: 'static',
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    background: 'transparent',
+    boxShadow: 'none'
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
