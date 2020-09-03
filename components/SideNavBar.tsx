@@ -16,7 +16,7 @@ const StyledMenuIcon = styled(IconButton)`
     position: absolute;
     width: auto;
     top: 45%;
-    right: 48%;
+    left: 0%;
 `;
 
 const SideNavBar: React.FC = () => {
