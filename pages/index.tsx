@@ -1,29 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
-import SideNavBar from '../components/SideNavBar';
+import MenuIcon from '@material-ui/icons';
+import NavBar from '../components/NavBar';
+import Logo from '../components/Logo';
 
 const StyledApp = styled.div`
-  text-align: center;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  padding: 0;
+  font-family: 'Verdana', 'san serif';
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 `;
 
-// const StyledPage = styled.div`
-//   overflow-x: hidden;
-//   position: relative
-// `;
+const StyledPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+`;
 
 const StyledBackgroundVideo = styled.video`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 50%;
-    right: 50%;
-    top: 50%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: "-1";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 `;
 
 const Home: React.FC = () => (
@@ -34,11 +44,14 @@ const Home: React.FC = () => (
     </Head>
     <main>
       <StyledApp>
-        <SideNavBar />
         <StyledBackgroundVideo loop autoPlay muted>
           <source src="/videos/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </StyledBackgroundVideo>
+        <NavBar />
+        <StyledPage>
+          <Logo />
+        </StyledPage>
       </StyledApp>
     </main>
   </div>

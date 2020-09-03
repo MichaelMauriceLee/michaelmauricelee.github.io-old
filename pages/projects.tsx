@@ -3,23 +3,18 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import pageVariants from '../animations/variants';
 import pageTransition from '../animations/transitions';
-
-const StyledPage = styled.div`
-  position: absolute
-`;
+import Head from 'next/head';
 
 const Projects: React.FC = () => (
-  <StyledPage>
-    <motion.div
-      initial="intial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-    >
-      <h2>Projects</h2>
-    </motion.div>
-  </StyledPage>
+  <div className="container">
+    <Head>
+      <title>Projects | Michael Lee</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <main>
+      
+    </main>
+  </div>
 );
 
 export default Projects;
