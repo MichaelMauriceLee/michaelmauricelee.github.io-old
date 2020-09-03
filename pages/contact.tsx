@@ -6,9 +6,8 @@ const Contact: React.FC = () => {
     e.preventDefault();
     try {
       const result = await emailjs.sendForm('portfolio', 'portfolio_form', e.target, 'user_gSfkba0Rf5gMdNzGxHLxj');
-      console.log(result.text);
     } catch (err) {
-      console.log(err.text);
+      console.log(err);
     }
   };
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
-import MenuIcon from '@material-ui/icons';
 import NavBar from '../components/NavBar';
 import Logo from '../components/Logo';
+import SideNavBar from '../components/SideNavBar';
 
+// TODO refactor
 const StyledApp = styled.div`
   margin: 0;
   padding: 0;
@@ -49,6 +50,7 @@ const Home: React.FC = () => (
           Your browser does not support the video tag.
         </StyledBackgroundVideo>
         <NavBar />
+        <SideNavBar />
         <StyledPage>
           <Logo />
         </StyledPage>
