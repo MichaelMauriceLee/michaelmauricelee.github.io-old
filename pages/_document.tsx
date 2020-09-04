@@ -1,9 +1,11 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { ServerStyleSheets } from '@material-ui/styles';
 
 class MyDocument extends Document {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   static async getInitialProps(ctx) {
     const styledComponentsSheet = new ServerStyleSheet();
     const materialSheets = new ServerStyleSheets();
@@ -11,6 +13,7 @@ class MyDocument extends Document {
 
     try {
       ctx.renderPage = () => originalRenderPage({
+        // eslint-disable-next-line max-len
         enhanceApp: (App) => (props) => styledComponentsSheet.collectStyles(materialSheets.collect(<App {...props} />)),
       });
       const initialProps = await Document.getInitialProps(ctx);
@@ -29,6 +32,7 @@ class MyDocument extends Document {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   render() {
     return (
       <html lang="en" dir="ltr">
