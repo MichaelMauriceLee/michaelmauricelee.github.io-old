@@ -109,7 +109,7 @@ const Contact: React.FC = () => {
               onSubmit={sendEmail}
               validate={validate}
               render={({
-                handleSubmit, form, submitting, pristine,
+                handleSubmit, form, pristine,
               }) => (
                 <StyledForm onSubmit={async (event) => {
                   try {
@@ -179,7 +179,7 @@ const Contact: React.FC = () => {
                       />
                     )}
                   />
-                  <Button type="submit" disabled={submitting || pristine}>Submit</Button>
+                  <Button type="submit" disabled={pristine}>Submit</Button>
                 </StyledForm>
                 // <form onSubmit={async (event) => {
                 //   try {
