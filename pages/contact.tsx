@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Head from 'next/head';
 import { TextField, Button } from '@material-ui/core';
 import { Color } from '@material-ui/lab';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import CustomAlert from '../components/CustomAlert';
 import NavBar from '../components/NavBar';
 import SideNavBar from '../components/SideNavBar';
@@ -53,7 +54,7 @@ const StyledForm = styled.form`
 
 const Contact: React.FC = () => {
   const [displayAlert, setDisplayAlert] = useState(false);
-  const [severity, setSeverity] = useState('' as Color);
+  const [severity, setSeverity] = useState('success' as Color);
   const [message, setMessage] = useState('');
 
   const sendEmail = async (formValues: IFormValues) => {
@@ -96,20 +97,17 @@ const Contact: React.FC = () => {
           <NavBar />
           <SideNavBar />
           <StyledPage>
-            {displayAlert
-            && (
             <CustomAlert
               severity={severity}
               message={message}
               displayAlert={displayAlert}
               setDisplayAlert={setDisplayAlert}
             />
-            )}
             <Form
               onSubmit={sendEmail}
               validate={validate}
               render={({
-                handleSubmit, form, pristine,
+                handleSubmit, form, pristine, invalid, submitting,
               }) => (
                 <StyledForm onSubmit={async (event) => {
                   try {
@@ -129,6 +127,7 @@ const Contact: React.FC = () => {
                   }
                 }}
                 >
+                  {submitting && <CircularProgress />}
                   <Field
                     name="name"
                     render={({ input, meta }) => (
@@ -179,78 +178,8 @@ const Contact: React.FC = () => {
                       />
                     )}
                   />
-                  <Button type="submit" disabled={pristine}>Submit</Button>
+                  <Button type="submit" disabled={pristine || invalid || submitting}>Submit</Button>
                 </StyledForm>
-                // <form onSubmit={async (event) => {
-                //   try {
-                //     await handleSubmit(event);
-                //     setSeverity('success');
-                //     setMessage('Email successfully sent!');
-                //     // @ts-ignore
-                //     form.restart();
-                //   } catch (err) {
-                //     setSeverity('error');
-                //     setMessage(err.text);
-                //   } finally {
-                //     setDisplayAlert(true);
-                //     setTimeout(() => {
-                //       setDisplayAlert(false);
-                //     }, 3000);
-                //   }
-                // }}
-                // >
-                //   <Field
-                //     name="name"
-                //     render={({ input, meta }) => (
-                //       <TextField
-                //         label="Name"
-                //         color="secondary"
-                //         helperText={meta.touched ? meta.error : undefined}
-                //         error={meta.error && meta.touched}
-                //         {...input}
-                //       />
-                //     )}
-                //   />
-                //   <Field
-                //     name="email"
-                //     render={({ input, meta }) => (
-                //       <TextField
-                //         label="Email"
-                //         color="secondary"
-                //         helperText={meta.touched ? meta.error : undefined}
-                //         error={meta.error && meta.touched}
-                //         {...input}
-                //       />
-                //     )}
-                //   />
-                //   <Field
-                //     name="subject"
-                //     render={({ input, meta }) => (
-                //       <TextField
-                //         label="Subject"
-                //         color="secondary"
-                //         helperText={meta.touched ? meta.error : undefined}
-                //         error={meta.error && meta.touched}
-                //         {...input}
-                //       />
-                //     )}
-                //   />
-                //   <Field
-                //     name="message"
-                //     render={({ input, meta }) => (
-                //       <TextField
-                //         label="Message"
-                //         color="secondary"
-                //         multiline
-                //         rows={4}
-                //         helperText={meta.touched ? meta.error : undefined}
-                //         error={meta.error && meta.touched}
-                //         {...input}
-                //       />
-                //     )}
-                //   />
-                //   <Button type="submit" disabled={submitting || pristine}>Submit</Button>
-                // </form>
               )}
             />
           </StyledPage>
