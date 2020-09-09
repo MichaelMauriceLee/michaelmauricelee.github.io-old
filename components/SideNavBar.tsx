@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
+import HomeIcon from '@material-ui/icons/Home';
+import DomainIcon from '@material-ui/icons/Domain';
+import GradeIcon from '@material-ui/icons/Grade';
+import EmailIcon from '@material-ui/icons/Email';
 import { Drawer } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -24,22 +28,22 @@ const SideNavBar: React.FC = () => {
   const listItems = [
     {
       text: 'Home',
-      icon: <MenuIcon />,
+      icon: <HomeIcon />,
       href: '/',
     },
     {
       text: 'About',
-      icon: <MenuIcon />,
+      icon: <GradeIcon />,
       href: '/about',
     },
     {
       text: 'Projects',
-      icon: <MenuIcon />,
+      icon: <DomainIcon />,
       href: '/projects',
     },
     {
       text: 'Contact',
-      icon: <MenuIcon />,
+      icon: <EmailIcon />,
       href: '/contact',
     },
   ];

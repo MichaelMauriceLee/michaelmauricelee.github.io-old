@@ -4,7 +4,7 @@ import Head from 'next/head';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 interface IMyApp {
-  Component: React.FC,
+  Component: React.FC<any>,
   pageProps: unknown
 }
 
@@ -13,6 +13,7 @@ const MyApp: React.FC<IMyApp> = ({ Component, pageProps }) => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
+      // @ts-ignore
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }, []);

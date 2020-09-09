@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
+import { Typography } from '@material-ui/core';
 import NavBar from '../components/NavBar';
 import SideNavBar from '../components/SideNavBar';
 
@@ -35,9 +36,14 @@ const Projects: React.FC = () => (
         <NavBar />
         <SideNavBar />
         <StyledPage>
-          <h2 color="white">
-            Project
-          </h2>
+          <div style={{ backgroundColor: '#444' }}>
+            <Typography variant="h1">
+              Projects
+            </Typography>
+            <Typography variant="body1">
+              Here are some of my side projects that I've worked on in the past.
+            </Typography>
+          </div>
         </StyledPage>
       </StyledApp>
     </main>

@@ -33,6 +33,7 @@ const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: black;
 `;
 
 const StyledPage = styled.div`
@@ -50,6 +51,7 @@ const StyledForm = styled.form`
   flex-direction: column;
   text-align: start;
   height: 100%;
+  background-color: grey;
 `;
 
 const Contact: React.FC = () => {
@@ -133,7 +135,7 @@ const Contact: React.FC = () => {
                     render={({ input, meta }) => (
                       <TextField
                         label="Name"
-                        color="secondary"
+                        color="primary"
                         helperText={meta.touched ? meta.error : undefined}
                         error={meta.error && meta.touched}
                         {...input}
@@ -145,7 +147,7 @@ const Contact: React.FC = () => {
                     render={({ input, meta }) => (
                       <TextField
                         label="Email"
-                        color="secondary"
+                        color="primary"
                         helperText={meta.touched ? meta.error : undefined}
                         error={meta.error && meta.touched}
                         {...input}
@@ -157,7 +159,7 @@ const Contact: React.FC = () => {
                     render={({ input, meta }) => (
                       <TextField
                         label="Subject"
-                        color="secondary"
+                        color="primary"
                         helperText={meta.touched ? meta.error : undefined}
                         error={meta.error && meta.touched}
                         {...input}
@@ -169,7 +171,7 @@ const Contact: React.FC = () => {
                     render={({ input, meta }) => (
                       <TextField
                         label="Message"
-                        color="secondary"
+                        color="primary"
                         multiline
                         rows={4}
                         helperText={meta.touched ? meta.error : undefined}
