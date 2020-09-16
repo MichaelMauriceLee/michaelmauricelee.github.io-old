@@ -17,10 +17,10 @@ import Link from './Link';
 
 // TODO fix this later
 const StyledMenuIcon = styled(IconButton)`
-    position: absolute;
-    width: auto;
-    top: 45%;
-    right: 48%;
+  position: absolute;
+  width: auto;
+  top: 45%;
+  right: 48%;
 `;
 
 const SideNavBar: React.FC = () => {
@@ -59,9 +59,9 @@ const SideNavBar: React.FC = () => {
   return (
     <>
       {!open && (
-      <StyledMenuIcon onClick={handleDrawerOpen}>
-        <MenuIcon style={{ fill: 'white' }} />
-      </StyledMenuIcon>
+        <StyledMenuIcon onClick={handleDrawerOpen}>
+          <MenuIcon style={{ fill: 'white' }} />
+        </StyledMenuIcon>
       )}
       <Drawer
         variant="persistent"

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AppBar, Button } from '@material-ui/core';
+import { useRouter } from 'next/router';
 import Link from './Link';
 
 interface IStyledButtonsRow {
@@ -33,25 +34,36 @@ const StyledButton: any = styled(Button)`
   }
 `;
 
-const NavBar: React.FC = () => (
-  <StyledNavBar>
-    <StyledButtonsRow justifyContent="flex-start">
-      <StyledButton component={Link} href="/about">
-        About
-      </StyledButton>
-    </StyledButtonsRow>
-    <StyledButtonsRow justifyContent="flex-end">
-      <StyledButton href="https://www.linkedin.com/in/michael-lee-8967b614a/">
-        LinkedIn
-      </StyledButton>
-      <StyledButton href="https://github.com/MichaelMauriceLee">
-        GitHub
-      </StyledButton>
-      <StyledButton component={Link} href="/contact">
-        Contact
-      </StyledButton>
-    </StyledButtonsRow>
-  </StyledNavBar>
-);
+const NavBar: React.FC = () => {
+  const router = useRouter();
+  return (
+    <StyledNavBar>
+      <StyledButtonsRow justifyContent="flex-start">
+        {router.pathname === '/'
+          ? (
+            <StyledButton component={Link} href="/about">
+              About
+            </StyledButton>
+          )
+          : (
+            <StyledButton component={Link} href="/">
+              Home
+            </StyledButton>
+          )}
+      </StyledButtonsRow>
+      <StyledButtonsRow justifyContent="flex-end">
+        <StyledButton href="https://www.linkedin.com/in/michael-lee-8967b614a/">
+          LinkedIn
+        </StyledButton>
+        <StyledButton href="https://github.com/MichaelMauriceLee">
+          GitHub
+        </StyledButton>
+        <StyledButton component={Link} href="/contact">
+          Contact
+        </StyledButton>
+      </StyledButtonsRow>
+    </StyledNavBar>
+  );
+};
 
 export default NavBar;

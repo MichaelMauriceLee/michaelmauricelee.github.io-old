@@ -70,7 +70,6 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://yourdomain.com" />
           <meta property="og:image" content="https://yourdomain.com/static/icons/apple-touch-icon.png" />
           {/* PWA primary color */}
-
         </Head>
         <body>
           <Main />

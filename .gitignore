@@ -33,5 +33,5 @@ yarn-error.log*
 .vscode
 
 # pwa files (generated at build time)
-/public/sw.js
-/public/workbox-*.js
+/public/sw*
+/public/workbox-*
