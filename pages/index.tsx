@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import NavBar from '../components/NavBar';
 import Logo from '../components/Logo';
 import SideNavBar from '../components/SideNavBar';
@@ -37,6 +39,14 @@ const StyledBackgroundVideo = styled.video`
   z-index: -1;
 `;
 
+// TODO fix this later
+const StyledMenuIcon = styled(IconButton)`
+  position: absolute;
+  width: auto;
+  top: 45%;
+  right: 48%;
+`;
+
 const Home: React.FC = () => (
   <div className="container">
     <Head>
@@ -51,6 +61,9 @@ const Home: React.FC = () => (
         </StyledBackgroundVideo>
         <NavBar />
         <SideNavBar />
+        {/* <StyledMenuIcon>
+          <MenuIcon style={{ fill: 'white' }} />
+        </StyledMenuIcon> */}
         <StyledPage>
           <Logo />
         </StyledPage>

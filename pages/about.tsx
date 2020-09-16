@@ -12,9 +12,10 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import MenuIcon from '@material-ui/icons/Menu';
+import Modal from '@material-ui/core/Modal';
 import SideNavBar from '../components/SideNavBar';
 import NavBar from '../components/NavBar';
-import Modal from '@material-ui/core/Modal';
 
 const StyledApp = styled.div`
   margin: 0;
