@@ -1,7 +1,17 @@
 import {
-  Button, CardContent, CardMedia, Dialog, Typography,
+  Button, CardMedia,
+  Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Typography,
 } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+import styled from 'styled-components';
 import React from 'react';
+
+const StyledDialogTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 interface IProps {
     title: string;
@@ -25,26 +35,30 @@ const ProjectModal: React.FC<IProps> = ({
     open={displayModal}
     onClose={handleModalClose}
   >
-    <CardMedia component="img" image={modalInfo.imageUrl} />
-    <CardContent>
-      <Typography gutterBottom variant="h5" component="h2">
+    <DialogTitle>
+      <StyledDialogTitle>
         {title}
-      </Typography>
+        <IconButton aria-label="close" onClick={handleModalClose}>
+          <CloseIcon />
+        </IconButton>
+      </StyledDialogTitle>
+    </DialogTitle>
+    <DialogContent dividers>
+      <CardMedia component="img" image={modalInfo.imageUrl} />
       <Typography variant="body2" color="textSecondary" component="p">
         {modalInfo.description}
       </Typography>
-    </CardContent>
-    {webAppInfo.isWebApp && (
+    </DialogContent>
+    <DialogActions>
+      {webAppInfo.isWebApp && (
       <Button size="small" color="primary" href={webAppInfo.webAppURL}>
         Open Application
       </Button>
-    )}
-    <Button size="small" color="primary" onClick={handleModalClose}>
-      Close
-    </Button>
-    <Button size="small" color="primary" href={codeUrl}>
-      View Code
-    </Button>
+      )}
+      <Button size="small" color="primary" href={codeUrl}>
+        View Code
+      </Button>
+    </DialogActions>
   </Dialog>
 );
 
