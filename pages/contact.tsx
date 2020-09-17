@@ -61,6 +61,7 @@ const StyledForm = styled.form`
   flex-direction: column;
   text-align: start;
   height: 100%;
+  width: 100%;
   background-color: grey;
 `;
 

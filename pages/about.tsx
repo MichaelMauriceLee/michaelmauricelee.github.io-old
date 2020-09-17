@@ -21,6 +21,7 @@ const StyledApp = styled.div`
   flex-direction: column;
   height: 100vh;
   background-color: black;
+  overflow:auto;
 `;
 
 const StyledPage = styled.div`
@@ -33,12 +34,28 @@ const StyledPage = styled.div`
   height: 100%;
   width: 80%;
   margin: auto;
+  overflow:auto;
 `;
 
 const StyledMenuIcon = styled.div`
   position: absolute;
   top: 50%;
   left: 0.5%;
+`;
+
+const StyledContainer = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  overflow:auto;
+`;
+
+const StyledAbout = styled.div`
+  padding: 2em;
 `;
 
 interface TabPanelProps {
@@ -207,7 +224,7 @@ const About: React.FC = () => {
             </IconButton>
           </StyledMenuIcon>
           <StyledPage>
-            <div style={{ backgroundColor: '#444' }}>
+            <StyledContainer>
               <AppBar position="static">
                 <Tabs
                   value={value}
@@ -280,14 +297,16 @@ const About: React.FC = () => {
                   ))}
                 </Grid>
               </TabPanel>
-              <Typography variant="body1">
-                Master of Engineering in Software Engineering.
-                Proficient in web development using Python, Java, JavaScript,
-                C# as well as working with Microsoft Azure cloud services.
-                Has previous work experience in the oil and gas industry as a
-                Facilities Engineering Intern and as a Relief Field Operator.
-              </Typography>
-            </div>
+              <StyledAbout>
+                <Typography variant="body1">
+                  Master of Engineering in Software Engineering.
+                  Proficient in web development using Python, Java, JavaScript,
+                  C# as well as working with Microsoft Azure cloud services.
+                  Has previous work experience in the oil and gas industry as a
+                  Facilities Engineering Intern and as a Relief Field Operator.
+                </Typography>
+              </StyledAbout>
+            </StyledContainer>
           </StyledPage>
         </StyledApp>
       </main>
