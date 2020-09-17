@@ -5,17 +5,11 @@ import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import { Box, Button } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import MenuIcon from '@material-ui/icons/Menu';
-import Modal from '@material-ui/core/Modal';
 import SideNavBar from '../components/SideNavBar';
 import NavBar from '../components/NavBar';
+import ProjectCard from '../components/ProjectCard';
 
 const StyledApp = styled.div`
   margin: 0;
@@ -39,8 +33,8 @@ const StyledPage = styled.div`
 
 interface TabPanelProps {
   children?: React.ReactNode;
-  index: any;
-  value: any;
+  index: unknown;
+  value: unknown;
 }
 
 const TabPanel = (props: TabPanelProps) => {
@@ -65,20 +59,127 @@ const TabPanel = (props: TabPanelProps) => {
   );
 };
 
+interface IProjects {
+  title: string;
+  codeUrl: string;
+  modalInfo: {
+      imageUrl: string;
+      description: string;
+  }
+  cardInfo: {
+      imageUrl: string;
+      description: string;
+  }
+  webAppInfo: {
+      isWebApp: boolean;
+      webAppURL: string | undefined;
+  }
+}
+
+const projects: Array<IProjects> = [
+  {
+    title: 'Social Media Web Application',
+    codeUrl: 'https://github.com/MichaelMauriceLee/Connectivities',
+    modalInfo: {
+      imageUrl: '/images/connectivities.JPG',
+      description: 'Full stack social media web application similar to meetup.com, built using ASP .NET Core, Microsoft SQL Server, and React and deployed using Microsoft Azure.Users can create and search for events and other like-minded users. In addition to its main functionality, users can leave comments on eents and upload photos to their profile, as well as keep a list of followers.',
+    },
+    cardInfo: {
+      imageUrl: '/images/connectivities_sm.JPG',
+      description: 'Social media application similar to meetup.com',
+    },
+    webAppInfo: {
+      isWebApp: true,
+      webAppURL: 'https://connectivities.azurewebsites.net',
+    },
+  },
+  {
+    title: 'Tensorflow Real Time Object Detection Program',
+    codeUrl: 'https://github.com/MichaelMauriceLee/FF14-Race-Identifer',
+    modalInfo: {
+      imageUrl: '/images/ff14_race_identifer.JPG',
+      description: 'Real time object detection of races from the game Final Fantasy 14.  The frozen inference model was created by using Tensorflow\'s Object Detection API and retraining Google\'s faster_rcnn_inception_v2_coco_2018_01_28 model to detect any images on the computer screen of any character from Final Fantasy 14 and display the information of the character\'s race and gender on screen.',
+    },
+    cardInfo: {
+      imageUrl: '/images/ff14_race_identifer_sm.JPG',
+      description: 'Real time object detection of races from the game Final Fantasy 14.',
+    },
+    webAppInfo: {
+      isWebApp: false,
+      webAppURL: undefined,
+    },
+  },
+  {
+    title: 'Event-Driven Mobile Game Bot with GUI',
+    codeUrl: 'https://github.com/MichaelMauriceLee/Shiny-Colors-Bot-1920-x-1080',
+    modalInfo: {
+      imageUrl: '/images/shiny_colors_bot.JPG',
+      description: 'Bot for the mobile game アイドルマスターシャイニ―カラーズ.  Built using Python OpenCV, tkinter. This program opens up a GUI for users to configure settings and allows the user to start and stop the program. The bot continually scans the play area, and when a series of buttons pops up, uses the mouse to click on the buttons in a set sequence. No files are injected into the game, as the bot uses on screen pixel data to make decisions.  Note that this program only works with screen resolutions around 1920 x 1080 px. The bot will only recognize images when around 80% of the image on screen matches the image stored in its database.',
+    },
+    cardInfo: {
+      imageUrl: '/images/shiny_colors_bot_sm.JPG',
+      description: 'Bot for the mobile game アイドルマスターシャイニ―カラーズ.',
+    },
+    webAppInfo: {
+      isWebApp: false,
+      webAppURL: undefined,
+    },
+  },
+  {
+    title: 'Tic-Tac-Toe',
+    codeUrl: 'https://github.com/MichaelMauriceLee/Tic-Tac-Toe',
+    modalInfo: {
+      imageUrl: '/images/tic-tac-toe.JPG',
+      description: 'Tic-Tac-Toe game made in Java with AI players.  The game runs in the terminal, asks for the names for the players, lets the human player choose the difficulty of the AI and then starts the game.  All files in the src folder.',
+    },
+    cardInfo: {
+      imageUrl: '/images/tic-tac-toe_sm.JPG',
+      description: 'Tic-Tac-Toe game made in Java with AI players.',
+    },
+    webAppInfo: {
+      isWebApp: false,
+      webAppURL: undefined,
+    },
+  },
+  {
+    title: 'Student Registration App',
+    codeUrl: 'https://github.com/MichaelMauriceLee/Student-Registration-App',
+    modalInfo: {
+      imageUrl: '/images/student_rep_app.JPG',
+      description: 'Student registration app for registering courses. Made in Java.  The app runs in the terminal, asks for the user if they are one of the few registered students or the system admin, and then runs the app.  Features a main menu with abilities such as adding and removing course offerings, looking up courses offered this semester, and check grades.  All files in the src folder.',
+    },
+    cardInfo: {
+      imageUrl: '/images/student_rep_app_sm.JPG',
+      description: 'Student registration app for registering courses. Made in Java.',
+    },
+    webAppInfo: {
+      isWebApp: false,
+      webAppURL: undefined,
+    },
+  },
+  {
+    title: 'Inventory Management App',
+    codeUrl: 'https://github.com/MichaelMauriceLee/Inventory-Management-App',
+    modalInfo: {
+      imageUrl: '/images/inventory_management.JPG',
+      description: 'Retail store inventory management app. Made in Java.  The app runs in the terminal. At startup, the app parses data from tools.txt and suppliers.txt (which at like databases) and creates a list of these items to be used in the app.  Features a main menu with abilities such as checking tool stock, creating orders and writing the orders to orders.txt.  All files in the src folder.',
+    },
+    cardInfo: {
+      imageUrl: '/images/inventory_management_sm.JPG',
+      description: 'Retail store inventory management app. Made in Java.',
+    },
+    webAppInfo: {
+      isWebApp: false,
+      webAppURL: undefined,
+    },
+  },
+];
+
 const About: React.FC = () => {
   const [value, setValue] = React.useState(0);
-  const [open, setOpen] = React.useState(false);
 
   const handleChange = (event: React.ChangeEvent<unknown>, newValue: number) => {
     setValue(newValue);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
   };
 
   return (
@@ -147,153 +248,26 @@ const About: React.FC = () => {
                 </Typography>
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <Grid container spacing={3}>
-                  <Grid item xs>
-                    <Card>
-                      <CardActionArea>
-                        <CardMedia component="img" image="/images/connectivities_sm.JPG" />
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            Social Media Web Application
-                          </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p">
-                            Social media application similar to meetup.com
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                      <CardActions>
-                        <Button size="small" color="primary" href="https://connectivities.azurewebsites.net">
-                          Open Application
-                        </Button>
-                        <Button size="small" color="primary">
-                          See Details
-                        </Button>
-                        <Button size="small" color="primary" href="https://github.com/MichaelMauriceLee/Connectivities">
-                          View Code
-                        </Button>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                  <Grid item xs>
-                    <Card>
-                      <CardActionArea>
-                        <CardMedia component="img" image="/images/ff14_race_identifer_sm.JPG" />
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            Tensorflow Real Time Object Detection Program
-                          </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p">
-                            Real time object detection of races from the game Final Fantasy 14.
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                      <CardActions>
-                        <Button size="small" color="primary">
-                          See Details
-                        </Button>
-                        <Button size="small" color="primary" href="https://github.com/MichaelMauriceLee/FF14-Race-Identifer">
-                          View Code
-                        </Button>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                  <Grid item xs>
-                    <Card>
-                      <CardActionArea>
-                        <CardMedia component="img" image="/images/shiny_colors_bot_sm.JPG" />
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            Tic-Tac-Toe
-                          </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p">
-                            Tic-Tac-Toe game made in Java with AI players.
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                      <CardActions>
-                        <Button size="small" color="primary">
-                          See Details
-                        </Button>
-                        <Button size="small" color="primary" href="https://github.com/MichaelMauriceLee/Shiny-Colors-Bot-1920-x-1080">
-                          View Code
-                        </Button>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                </Grid>
-                <Grid container spacing={3}>
-                  <Grid item xs>
-                    <Card>
-                      <CardActionArea>
-                        <CardMedia component="img" image="/images/tic-tac-toe_sm.JPG" />
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            Tic-Tac-Toe
-                          </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p">
-                            Tic-Tac-Toe game made in Java with AI players.
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                      <CardActions>
-                        <Button size="small" color="primary">
-                          See Details
-                        </Button>
-                        <Button size="small" color="primary" href="https://github.com/MichaelMauriceLee/Tic-Tac-Toe">
-                          View Code
-                        </Button>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                  <Grid item xs>
-                    <Card>
-                      <CardActionArea>
-                        <CardMedia component="img" image="/images/student_rep_app_sm.JPG" />
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            Student Registration App
-                          </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p">
-                            Student registration app for registering courses. Made in Java.
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                      <CardActions>
-                        <Button size="small" color="primary">
-                          See Details
-                        </Button>
-                        <Button size="small" color="primary" href="https://github.com/MichaelMauriceLee/Student-Registration-App">
-                          View Code
-                        </Button>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                  <Grid item xs>
-                    <Card>
-                      <CardActionArea>
-                        <CardMedia component="img" image="/images/inventory_management_sm.JPG" />
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            Inventory Management App
-                          </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p">
-                            Retail store inventory management app. Made in Java.
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                      <CardActions>
-                        <Button size="small" color="primary">
-                          See Details
-                        </Button>
-                        <Button size="small" color="primary" href="https://github.com/MichaelMauriceLee/Inventory-Management-App">
-                          View Code
-                        </Button>
-                      </CardActions>
-                    </Card>
-                  </Grid>
+                <Grid
+                  container
+                  spacing={3}
+                  direction="row"
+                  justify="flex-start"
+                  alignItems="flex-start"
+                >
+                  {projects.map((project) => (
+                    <Grid item xs={12} sm={6} md={4} key={projects.indexOf(project)}>
+                      <ProjectCard
+                        title={project.title}
+                        codeUrl={project.codeUrl}
+                        modalInfo={project.modalInfo}
+                        cardInfo={project.cardInfo}
+                        webAppInfo={project.webAppInfo}
+                      />
+                    </Grid>
+                  ))}
                 </Grid>
               </TabPanel>
-
               <Typography variant="body1">
                 Master of Engineering in Software Engineering.
                 Proficient in web development using Python, Java, JavaScript, C# as well as working with Microsoft Azure cloud services.
@@ -307,5 +281,4 @@ const About: React.FC = () => {
     </div>
   );
 };
-
 export default About;
