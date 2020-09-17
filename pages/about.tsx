@@ -7,9 +7,11 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { Box } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import SideNavBar from '../components/SideNavBar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import NavBar from '../components/NavBar';
 import ProjectCard from '../components/ProjectCard';
+import Link from '../components/Link';
 
 const StyledApp = styled.div`
   margin: 0;
@@ -29,6 +31,14 @@ const StyledPage = styled.div`
   align-items: center;
   flex: 1;
   height: 100%;
+`;
+
+// TODO fix this later
+const StyledMenuIcon = styled(IconButton)`
+  position: absolute;
+  width: auto;
+  top: 45%;
+  right: 48%;
 `;
 
 interface TabPanelProps {
@@ -191,7 +201,9 @@ const About: React.FC = () => {
       <main>
         <StyledApp>
           <NavBar />
-          <SideNavBar />
+          <StyledMenuIcon component={Link} href="/">
+            <MenuIcon style={{ fill: 'white' }} />
+          </StyledMenuIcon>
           <StyledPage>
             <div style={{ backgroundColor: '#444' }}>
               <AppBar position="static">
@@ -238,13 +250,11 @@ const About: React.FC = () => {
                   -	Performed normal maintenance and production data entry.
                   -	Optimized heavy oil wells which included shooting fluid level and adjusting pump speeds.
                   -	Organized various well services and rig work when wells were down.
-                  -
                 </Typography>
                 <Typography variant="body1">
                   Leader
                   Mini University Summer Camps (University of Calgary)                                                                             July 2015 - August 2015
                   	Supervised young attendees, prepared new activities and assisted camp instructors in teaching new skills.
-
                 </Typography>
               </TabPanel>
               <TabPanel value={value} index={1}>
@@ -270,9 +280,10 @@ const About: React.FC = () => {
               </TabPanel>
               <Typography variant="body1">
                 Master of Engineering in Software Engineering.
-                Proficient in web development using Python, Java, JavaScript, C# as well as working with Microsoft Azure cloud services.
-                Demonstrates leadership, organization, good teamwork skills, persistence, and accountability through work experience and extracurricular activities.
-                Has previous work experience in the oil and gas industry as a Facilities Engineering Intern and as a Relief Field Operator.
+                Proficient in web development using Python, Java, JavaScript,
+                C# as well as working with Microsoft Azure cloud services.
+                Has previous work experience in the oil and gas industry as a
+                Facilities Engineering Intern and as a Relief Field Operator.
               </Typography>
             </div>
           </StyledPage>

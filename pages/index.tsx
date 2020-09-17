@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import NavBar from '../components/NavBar';
 import Logo from '../components/Logo';
-import SideNavBar from '../components/SideNavBar';
+import Link from '../components/Link';
 
 // TODO refactor
 const StyledApp = styled.div`
@@ -60,10 +60,9 @@ const Home: React.FC = () => (
           Your browser does not support the video tag.
         </StyledBackgroundVideo>
         <NavBar />
-        <SideNavBar />
-        {/* <StyledMenuIcon>
+        <StyledMenuIcon component={Link} href="/about">
           <MenuIcon style={{ fill: 'white' }} />
-        </StyledMenuIcon> */}
+        </StyledMenuIcon>
         <StyledPage>
           <Logo />
         </StyledPage>

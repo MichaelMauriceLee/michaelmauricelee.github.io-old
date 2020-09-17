@@ -8,9 +8,11 @@ import Head from 'next/head';
 import { TextField, Button } from '@material-ui/core';
 import { Color } from '@material-ui/lab';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import CustomAlert from '../components/CustomAlert';
 import NavBar from '../components/NavBar';
-import SideNavBar from '../components/SideNavBar';
+import Link from '../components/Link';
 
 interface IFormValues {
   name: string;
@@ -44,6 +46,14 @@ const StyledPage = styled.div`
   align-items: center;
   flex: 1;
   height: 100%;
+`;
+
+// TODO fix this later
+const StyledMenuIcon = styled(IconButton)`
+  position: absolute;
+  width: auto;
+  top: 45%;
+  right: 48%;
 `;
 
 const StyledForm = styled.form`
@@ -97,7 +107,9 @@ const Contact: React.FC = () => {
       <main>
         <StyledApp>
           <NavBar />
-          <SideNavBar />
+          <StyledMenuIcon component={Link} href="/">
+            <MenuIcon style={{ fill: 'white' }} />
+          </StyledMenuIcon>
           <StyledPage>
             <CustomAlert
               severity={severity}
