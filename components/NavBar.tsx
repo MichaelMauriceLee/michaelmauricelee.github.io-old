@@ -21,6 +21,7 @@ const StyledNavBar = styled(AppBar)`
   flex-direction: row;
   justify-content: space-between;
   display: flex;
+  padding: 1em;
   }
 `;
 

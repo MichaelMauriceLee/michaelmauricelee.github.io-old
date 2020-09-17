@@ -46,14 +46,14 @@ const StyledPage = styled.div`
   align-items: center;
   flex: 1;
   height: 100%;
+  width: 80%;
+  margin: auto;
 `;
 
-// TODO fix this later
-const StyledMenuIcon = styled(IconButton)`
+const StyledMenuIcon = styled.div`
   position: absolute;
-  width: auto;
-  top: 45%;
-  right: 48%;
+  top: 50%;
+  left: 0.5%;
 `;
 
 const StyledForm = styled.form`
@@ -107,8 +107,10 @@ const Contact: React.FC = () => {
       <main>
         <StyledApp>
           <NavBar />
-          <StyledMenuIcon component={Link} href="/">
-            <MenuIcon style={{ fill: 'white' }} />
+          <StyledMenuIcon>
+            <IconButton component={Link} href="/">
+              <MenuIcon style={{ fill: 'white' }} />
+            </IconButton>
           </StyledMenuIcon>
           <StyledPage>
             <CustomAlert

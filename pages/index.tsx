@@ -25,6 +25,8 @@ const StyledPage = styled.div`
   align-items: center;
   flex: 1;
   height: 100%;
+  width: 80%;
+  margin: auto;
 `;
 
 const StyledBackgroundVideo = styled.video`
@@ -39,12 +41,10 @@ const StyledBackgroundVideo = styled.video`
   z-index: -1;
 `;
 
-// TODO fix this later
-const StyledMenuIcon = styled(IconButton)`
+const StyledMenuIcon = styled.div`
   position: absolute;
-  width: auto;
-  top: 45%;
-  right: 48%;
+  top: 50%;
+  left: 0.5%;
 `;
 
 const Home: React.FC = () => (
@@ -60,8 +60,10 @@ const Home: React.FC = () => (
           Your browser does not support the video tag.
         </StyledBackgroundVideo>
         <NavBar />
-        <StyledMenuIcon component={Link} href="/about">
-          <MenuIcon style={{ fill: 'white' }} />
+        <StyledMenuIcon>
+          <IconButton component={Link} href="/about">
+            <MenuIcon style={{ fill: 'white' }} />
+          </IconButton>
         </StyledMenuIcon>
         <StyledPage>
           <Logo />
