@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import Head from 'next/head';
 import { TextField, Button } from '@material-ui/core';
 import { Color } from '@material-ui/lab';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Paper from '@material-ui/core/Paper';
@@ -157,7 +157,7 @@ const Contact: React.FC = () => {
                     }
                   }}
                   >
-                    {submitting && <CircularProgress />}
+                    {submitting && <LinearProgress />}
                     <Field
                       name="name"
                       render={({ input, meta }) => (

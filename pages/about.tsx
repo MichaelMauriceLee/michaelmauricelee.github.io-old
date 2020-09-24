@@ -53,6 +53,10 @@ const StyledAbout = styled.div`
   padding: 2em;
 `;
 
+const StyledWriting = styled(Typography)`
+  color: #FFF;
+`;
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: unknown;
@@ -230,48 +234,98 @@ const About: React.FC = () => {
                 </Tabs>
               </AppBar>
               <TabPanel value={value} index={0}>
-                <Typography variant="body1">
-                  Software Developer
-                  Child Friendly Care (Calgary) 		                  					                     May 2020 - Present
-                  	Developing a full stack enterprise resource planning web application as part of a developer team working for a daycare SaaS start-up.  Technologies used in my work include:
-                  -	Cosmos DB
-                  -	Azure Functions for serverless API backend
-                  -	Vue.js for single page web application
-
+                <StyledWriting variant="h6">
+                  Software Developer (May 2020 - Present)
+                </StyledWriting>
+                <StyledWriting variant="body1">
+                  Child Friendly Care (Calgary)
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Developing a full stack enterprise resource planning web application
+                  as part of a developer team working for a daycare SaaS start-up.
+                </StyledWriting>
+                <StyledWriting variant="body2">
                   Some of my notable work include:
-                  	Designing and implementing business logic and database schema in order to allow administration staff to perform CRUD operations on programs as well as tracking the timing of students’ arrival and departures and their associated charges.
-
-                </Typography>
-                <Typography variant="body1">
-                  Intern, Facilities Engineering
-                  ATCO Gas Transmission (Edmonton)                   					 	              May 2017 - August 2018
-                  	Designed meter station installations, upgrades and removals within ATCO’s natural gas transmission system in Alberta.
-                  -	Worked on several projects simultaneously from project conception to completion.
-                  -	Worked with third-party contractors, field operations, drafting and construction crews on projects.
-                  -	Designed meter station layouts, prepared drawings and job procedures and calculated equipment sizing for pressure control and pipeline.
-                  -	Selected material for piping and station equipment installation.
-
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Designing and implementing business logic and database schema in order to
+                  allow administration staff to perform CRUD operations on programs as well
+                  as tracking the timing of students’ arrival and departures
+                  and their associated charges.
+                </StyledWriting>
+                <br />
+                <StyledWriting variant="h6">
+                  Intern, Facilities Engineering (May 2017 - August 2018)
+                </StyledWriting>
+                <StyledWriting variant="body1">
+                  ATCO Gas Transmission (Edmonton)
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Designed meter station installations, upgrades and removals
+                  within ATCO’s natural gas transmission system in Alberta.
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Worked on several projects simultaneously from project conception to completion.
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Worked with third-party contractors, field operations,
+                  drafting and construction crews on projects.
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Designed meter station layouts, prepared drawings and job procedures
+                  and calculated equipment sizing for pressure control and pipeline.
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Selected material for piping and station equipment installation.
+                </StyledWriting>
+                <br />
+                <StyledWriting variant="body2">
                   Some of my major projects include:
-                  	Designed a brand-new meter station to replace an old meter station with an estimated budget of $350k.
-                  	Removed a meter station from project conception to land reclamation on budget ($200K) and on time.
-                  	Completed a tight deadline project (1 week) to check and ensure the accuracy of a job procedure for a $1 million project.
-
-                </Typography>
-                <Typography variant="body1">
-                  Summer Student, Relief Operator
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Designed a brand-new meter station to replace an old meter station
+                  with an estimated budget of $350k.
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Removed a meter station from project conception to land
+                  reclamation on budget ($200K) and on time.
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Completed a tight deadline project (1 week) to check and
+                  ensure the accuracy of a job procedure for a $1 million project.
+                </StyledWriting>
+                <br />
+                <StyledWriting variant="h6">
+                  Summer Student, Relief Operator (May 2016 - August 2016)
+                </StyledWriting>
+                <StyledWriting variant="body1">
                   Canadian Natural Resources Limited (Lloydminster)
-                  May 2016 - August 2016
-                  	Operated 34 heavy oil wells in Marshall and Lone Rock oil fields within Lloydminster district.
-                  -	Performed normal maintenance and production data entry.
-                  -	Optimized heavy oil wells which included shooting fluid level and adjusting pump speeds.
-                  -	Organized various well services and rig work when wells were down.
-                </Typography>
-                <Typography variant="body1">
-                  Leader
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Operated 34 heavy oil wells in Marshall
+                  and Lone Rock oil fields within Lloydminster district.
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Performed normal maintenance and production data entry.
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Optimized heavy oil wells which included shooting
+                  fluid level and adjusting pump speeds.
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Organized various well services and rig work when wells were down.
+                </StyledWriting>
+                <br />
+                <StyledWriting variant="h6">
+                  Leader (July 2015 - August 2015)
+                </StyledWriting>
+                <StyledWriting variant="body1">
                   Mini University Summer Camps (University of Calgary)
-                  July 2015 - August 2015
-                  	Supervised young attendees, prepared new activities and assisted camp instructors in teaching new skills.
-                </Typography>
+                </StyledWriting>
+                <StyledWriting variant="body2">
+                  - Supervised young attendees, prepared new activities and
+                  assisted camp instructors in teaching new skills.
+                </StyledWriting>
               </TabPanel>
               <TabPanel value={value} index={1}>
                 <Grid
@@ -295,13 +349,13 @@ const About: React.FC = () => {
                 </Grid>
               </TabPanel>
               <StyledAbout>
-                <Typography variant="body1">
+                <StyledWriting variant="body1">
                   Master of Engineering in Software Engineering.
                   Proficient in web development using Python, Java, JavaScript,
                   C# as well as working with Microsoft Azure cloud services.
                   Has previous work experience in the oil and gas industry as a
                   Facilities Engineering Intern and as a Relief Field Operator.
-                </Typography>
+                </StyledWriting>
               </StyledAbout>
             </StyledContainer>
           </StyledPage>
