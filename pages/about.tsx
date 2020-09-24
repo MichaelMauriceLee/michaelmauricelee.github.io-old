@@ -12,29 +12,24 @@ import MenuIcon from '@material-ui/icons/Menu';
 import NavBar from '../components/NavBar';
 import ProjectCard from '../components/ProjectCard';
 import Link from '../components/Link';
+import Paper from '@material-ui/core/Paper';
 
 const StyledApp = styled.div`
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   font-family: 'Verdana', 'san serif';
+  background-color: grey;
+  overflow:auto;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background-color: black;
-  overflow:auto;
 `;
 
 const StyledPage = styled.div`
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  height: 100%;
   width: 80%;
   margin: auto;
-  overflow:auto;
+  flex: 1;
 `;
 
 const StyledMenuIcon = styled.div`
@@ -45,13 +40,11 @@ const StyledMenuIcon = styled.div`
 
 const StyledContainer = styled.div`
   position: relative;
-  height: 100%;
   width: 100%;
-  background-color: grey;
+  background-color: white;
   display: flex;
   flex-direction: column;
   text-align: start;
-  overflow:auto;
 `;
 
 const StyledAbout = styled.div`
@@ -90,16 +83,16 @@ interface IProjects {
   title: string;
   codeUrl: string;
   modalInfo: {
-      imageUrl: string;
-      description: string;
+    imageUrl: string;
+    description: string;
   }
   cardInfo: {
-      imageUrl: string;
-      description: string;
+    imageUrl: string;
+    description: string;
   }
   webAppInfo: {
-      isWebApp: boolean;
-      webAppURL: string | undefined;
+    isWebApp: boolean;
+    webAppURL: string | undefined;
   }
 }
 
