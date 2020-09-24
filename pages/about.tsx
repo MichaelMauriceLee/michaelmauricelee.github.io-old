@@ -9,20 +9,20 @@ import { Box } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Paper from '@material-ui/core/Paper';
 import NavBar from '../components/NavBar';
 import ProjectCard from '../components/ProjectCard';
 import Link from '../components/Link';
-import Paper from '@material-ui/core/Paper';
 
 const StyledApp = styled.div`
   margin: 0;
   padding: 0;
   min-height: 100vh;
   font-family: 'Verdana', 'san serif';
-  background-color: grey;
   overflow:auto;
   display: flex;
   flex-direction: column;
+  background-color: #6c757d;
 `;
 
 const StyledPage = styled.div`
@@ -38,10 +38,12 @@ const StyledMenuIcon = styled.div`
   left: 0.5%;
 `;
 
-const StyledContainer = styled.div`
+const StyledContainer = styled(Paper)`
+  && {
+    background-color: #343a40;
+  }
   position: relative;
   width: 100%;
-  background-color: white;
   display: flex;
   flex-direction: column;
   text-align: start;
@@ -257,7 +259,8 @@ const About: React.FC = () => {
                 </Typography>
                 <Typography variant="body1">
                   Summer Student, Relief Operator
-                  Canadian Natural Resources Limited (Lloydminster)                                                     	              May 2016 - August 2016
+                  Canadian Natural Resources Limited (Lloydminster)
+                  May 2016 - August 2016
                   	Operated 34 heavy oil wells in Marshall and Lone Rock oil fields within Lloydminster district.
                   -	Performed normal maintenance and production data entry.
                   -	Optimized heavy oil wells which included shooting fluid level and adjusting pump speeds.
@@ -265,7 +268,8 @@ const About: React.FC = () => {
                 </Typography>
                 <Typography variant="body1">
                   Leader
-                  Mini University Summer Camps (University of Calgary)                                                                             July 2015 - August 2015
+                  Mini University Summer Camps (University of Calgary)
+                  July 2015 - August 2015
                   	Supervised young attendees, prepared new activities and assisted camp instructors in teaching new skills.
                 </Typography>
               </TabPanel>

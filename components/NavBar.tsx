@@ -31,7 +31,7 @@ const StyledButtonsRow = styled.div`
 
 const StyledButton: any = styled(Button)`
   && {
-      color: white;
+  color: white;
   }
 `;
 
