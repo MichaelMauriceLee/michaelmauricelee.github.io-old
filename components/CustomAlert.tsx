@@ -20,7 +20,6 @@ const CustomAlert: React.FC<IProps> = ({
     if (reason === 'clickaway') {
       return;
     }
-
     setDisplayAlert(false);
   };
   return (

@@ -1,6 +1,6 @@
 import {
   Button, CardMedia,
-  Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Typography,
+  Dialog, DialogActions, DialogContent, DialogTitle, IconButton,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import styled from 'styled-components';
@@ -18,7 +18,7 @@ interface IProps {
     codeUrl: string;
     modalInfo: {
         imageUrl: string;
-        description: string;
+        description: React.ReactNode;
     }
     webAppInfo: {
         isWebApp: boolean;
@@ -45,9 +45,7 @@ const ProjectModal: React.FC<IProps> = ({
     </DialogTitle>
     <DialogContent dividers>
       <CardMedia component="img" image={modalInfo.imageUrl} />
-      <Typography variant="body2" color="textSecondary" component="p">
-        {modalInfo.description}
-      </Typography>
+      {modalInfo.description}
     </DialogContent>
     <DialogActions>
       {webAppInfo.isWebApp && (

@@ -9,7 +9,7 @@ interface IProps {
     codeUrl: string;
     modalInfo: {
         imageUrl: string;
-        description: string;
+        description: React.ReactNode;
     }
     cardInfo: {
         imageUrl: string;
