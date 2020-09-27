@@ -3,25 +3,9 @@ import {
 } from '@material-ui/core';
 import React, { useState } from 'react';
 import ProjectModal from './ProjectModal';
+import IProjects from '../interfaces/IProjects';
 
-interface IProps {
-    title: string;
-    codeUrl: string;
-    modalInfo: {
-        imageUrl: string;
-        description: React.ReactNode;
-    }
-    cardInfo: {
-        imageUrl: string;
-        description: string;
-    }
-    webAppInfo: {
-        isWebApp: boolean;
-        webAppURL?: string;
-    }
-}
-
-const ProjectCard: React.FC<IProps> = ({
+const ProjectCard: React.FC<IProjects> = ({
   title, codeUrl, modalInfo, cardInfo, webAppInfo,
 }) => {
   const [displayModal, setDisplayModal] = useState(false);

@@ -59,7 +59,7 @@ const NavBar: React.FC = () => {
         <StyledButton href="https://github.com/MichaelMauriceLee">
           GitHub
         </StyledButton>
-        <StyledButton component={Link} href="/contact">
+        <StyledButton component={Link} href="/about">
           Contact
         </StyledButton>
       </StyledButtonsRow>

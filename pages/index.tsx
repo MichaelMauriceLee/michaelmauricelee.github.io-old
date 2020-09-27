@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import Head from 'next/head';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { motion } from 'framer-motion';
 import NavBar from '../components/NavBar';
 import Logo from '../components/Logo';
 import Link from '../components/Link';
 
 // TODO refactor
-const StyledApp = styled.div`
+const StyledApp = styled(motion.div)`
   margin: 0;
   padding: 0;
   font-family: 'Verdana', 'san serif';
@@ -54,7 +55,11 @@ const Home: React.FC = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main>
-      <StyledApp>
+      <StyledApp
+        exit={{ opacity: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
         <StyledBackgroundVideo loop autoPlay muted>
           <source src="/videos/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.

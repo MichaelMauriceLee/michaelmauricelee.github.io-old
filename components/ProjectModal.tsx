@@ -14,18 +14,18 @@ const StyledDialogTitle = styled.div`
 `;
 
 interface IProps {
-    title: string;
-    codeUrl: string;
-    modalInfo: {
-        imageUrl: string;
-        description: React.ReactNode;
-    }
-    webAppInfo: {
-        isWebApp: boolean;
-        webAppURL?: string;
-    }
-    displayModal: boolean;
-    handleModalClose(): void;
+  title: string;
+  codeUrl: string;
+  modalInfo: {
+    imageUrl: string;
+    description: React.ReactNode;
+  }
+  webAppInfo: {
+    isWebApp: boolean;
+    webAppURL?: string;
+  }
+  displayModal: boolean;
+  handleModalClose(): void;
 }
 
 const ProjectModal: React.FC<IProps> = ({

@@ -2,6 +2,7 @@
 import React from 'react';
 import Head from 'next/head';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { AnimatePresence } from 'framer-motion';
 
 interface IMyApp {
   Component: React.FC<any>,
@@ -26,7 +27,9 @@ const MyApp: React.FC<IMyApp> = ({ Component, pageProps }) => {
       </Head>
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
-      <Component {...pageProps} />
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} />
+      </AnimatePresence>
     </>
   );
 };
