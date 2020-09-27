@@ -5,41 +5,36 @@ import emailjs from 'emailjs-com';
 import { Form, Field } from 'react-final-form';
 import styled from 'styled-components';
 import {
-  Card, CardContent, TextField, Button, Typography,
+  Card, CardContent, TextField, Button, Typography, CardActions,
 } from '@material-ui/core';
 import { Color } from '@material-ui/lab';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import Paper from '@material-ui/core/Paper';
 import CustomAlert from './CustomAlert';
 
 interface IFormValues {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 }
 
 interface IFormValueErrors {
-    name: string | undefined;
-    email: string | undefined;
-    subject: string | undefined;
-    message: string | undefined;
+  name: string | undefined;
+  email: string | undefined;
+  subject: string | undefined;
+  message: string | undefined;
 }
 
-const StyledContainer = styled(Paper)`
-  position: relative;
-  width: 100%;
+const StyledForm = styled(CardContent)`
   display: flex;
   flex-direction: column;
   text-align: start;
 `;
 
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  height: 100%;
-  width: 100%;
+const StyledTextField = styled(TextField)`
+  && {
+    padding-bottom: 0.5em;
+  }
 `;
 
 const StyledAlert = styled(CustomAlert)`
@@ -88,94 +83,94 @@ const Contact: React.FC = () => {
         displayAlert={displayAlert}
         setDisplayAlert={setDisplayAlert}
       />
-      <Card>
-        <CardContent>
-          <StyledContainer>
-            <Typography variant="h3">
-              Contact
-            </Typography>
-            <Form
-              onSubmit={sendEmail}
-              validate={validate}
-              render={({
-                handleSubmit, form, pristine, invalid, submitting,
-              }) => (
-                <StyledForm onSubmit={async (event) => {
-                  try {
-                    await handleSubmit(event);
-                    setSeverity('success');
-                    setMessage('Email successfully sent!');
-                    // @ts-ignore
-                    form.restart();
-                  } catch (err) {
-                    setSeverity('error');
-                    setMessage(err.text);
-                  } finally {
-                    setDisplayAlert(true);
-                    setTimeout(() => {
-                      setDisplayAlert(false);
-                    }, 3000);
-                  }
-                }}
-                >
-                  {submitting && <LinearProgress />}
-                  <Field
-                    name="name"
-                    render={({ input, meta }) => (
-                      <TextField
-                        label="Name"
-                        color="primary"
-                        helperText={meta.touched ? meta.error : undefined}
-                        error={meta.error && meta.touched}
-                        {...input}
-                      />
-                    )}
-                  />
-                  <Field
-                    name="email"
-                    render={({ input, meta }) => (
-                      <TextField
-                        label="Email"
-                        color="primary"
-                        helperText={meta.touched ? meta.error : undefined}
-                        error={meta.error && meta.touched}
-                        {...input}
-                      />
-                    )}
-                  />
-                  <Field
-                    name="subject"
-                    render={({ input, meta }) => (
-                      <TextField
-                        label="Subject"
-                        color="primary"
-                        helperText={meta.touched ? meta.error : undefined}
-                        error={meta.error && meta.touched}
-                        {...input}
-                      />
-                    )}
-                  />
-                  <Field
-                    name="message"
-                    render={({ input, meta }) => (
-                      <TextField
-                        label="Message"
-                        color="primary"
-                        multiline
-                        rows={4}
-                        helperText={meta.touched ? meta.error : undefined}
-                        error={meta.error && meta.touched}
-                        {...input}
-                      />
-                    )}
-                  />
-                  <Button type="submit" disabled={pristine || invalid || submitting}>Submit</Button>
-                </StyledForm>
-              )}
-            />
-          </StyledContainer>
-        </CardContent>
-      </Card>
+      <Form
+        onSubmit={sendEmail}
+        validate={validate}
+        render={({
+          handleSubmit, form, pristine, invalid, submitting,
+        }) => (
+          <Card>
+            <form onSubmit={async (event) => {
+              try {
+                await handleSubmit(event);
+                setSeverity('success');
+                setMessage('Email successfully sent!');
+                // @ts-ignore
+                form.restart();
+              } catch (err) {
+                setSeverity('error');
+                setMessage(err.text);
+              } finally {
+                setDisplayAlert(true);
+                setTimeout(() => {
+                  setDisplayAlert(false);
+                }, 3000);
+              }
+            }}
+            >
+              {submitting && <LinearProgress />}
+              <StyledForm>
+                <Typography variant="h3">
+                  Contact
+                </Typography>
+                <Field
+                  name="email"
+                  render={({ input, meta }) => (
+                    <StyledTextField
+                      label="Email"
+                      color="primary"
+                      helperText={meta.touched ? meta.error : undefined}
+                      error={meta.error && meta.touched}
+                      {...input}
+                    />
+                  )}
+                />
+                <Field
+                  name="subject"
+                  render={({ input, meta }) => (
+                    <StyledTextField
+                      label="Subject"
+                      color="primary"
+                      helperText={meta.touched ? meta.error : undefined}
+                      error={meta.error && meta.touched}
+                      {...input}
+                    />
+                  )}
+                />
+                <Field
+                  name="message"
+                  render={({ input, meta }) => (
+                    <StyledTextField
+                      label="Message"
+                      color="primary"
+                      multiline
+                      rows={10}
+                      helperText={meta.touched ? meta.error : undefined}
+                      error={meta.error && meta.touched}
+                      {...input}
+                    />
+                  )}
+                />
+                <Field
+                  name="name"
+                  render={({ input, meta }) => (
+                    <TextField
+                      label="Name"
+                      color="primary"
+                      helperText={meta.touched ? meta.error : undefined}
+                      error={meta.error && meta.touched}
+                      {...input}
+                    />
+                  )}
+                />
+              </StyledForm>
+              <CardActions>
+                <Button type="submit" disabled={pristine || invalid || submitting}>Submit</Button>
+              </CardActions>
+            </form>
+          </Card>
+        )}
+      />
     </>
   );
 };

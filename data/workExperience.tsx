@@ -17,7 +17,7 @@ const workExperience: Array<IWorkExperience> = [
     },
     description: (
       <>
-        <Typography variant="body2">
+        <Typography variant="body2" paragraph>
           - Developing a full stack enterprise resource planning web application
           as part of a developer team working for a daycare SaaS start-up.
         </Typography>
@@ -66,10 +66,9 @@ const workExperience: Array<IWorkExperience> = [
           - Designed meter station layouts, prepared drawings and job procedures
           and calculated equipment sizing for pressure control and pipeline.
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="body2" paragraph>
           - Selected material for piping and station equipment installation.
         </Typography>
-        <br />
         <Typography variant="body2">
           Some of my major projects include:
         </Typography>

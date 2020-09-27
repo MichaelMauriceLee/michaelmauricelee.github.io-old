@@ -8,7 +8,7 @@ import Tab from '@material-ui/core/Tab';
 import { Box } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import CancelIcon from '@material-ui/icons/Cancel';
 import Paper from '@material-ui/core/Paper';
 import { motion } from 'framer-motion';
 import NavBar from '../components/NavBar';
@@ -67,6 +67,10 @@ const StyledMenuIcon = styled.div`
   position: fixed;
   top: 50%;
   left: 0.5%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const StyledContainer = styled(Paper)`
@@ -133,7 +137,7 @@ const About: React.FC = () => {
           <NavBar />
           <StyledMenuIcon>
             <IconButton component={Link} href="/">
-              <MenuIcon style={{ fill: 'white' }} />
+              <CancelIcon style={{ fill: 'white' }} />
             </IconButton>
           </StyledMenuIcon>
           <StyledPage>
@@ -190,7 +194,8 @@ const About: React.FC = () => {
               </TabPanel>
               <StyledAbout>
                 <AboutSection />
-                <br />
+              </StyledAbout>
+              <StyledAbout>
                 <ContactForm />
               </StyledAbout>
             </StyledContainer>

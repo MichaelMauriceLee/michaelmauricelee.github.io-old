@@ -10,12 +10,11 @@ const projects: Array<IProjects> = [
       imageUrl: '/images/projects/connectivities.JPG',
       description: (
         <>
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary" paragraph>
             Full stack social media web application similar to meetup.com,
             built using ASP .NET Core, Microsoft SQL Server, and
             React and deployed using Microsoft Azure.
           </Typography>
-          <br />
           <Typography variant="body2" color="textSecondary">
             Users can create and search for events and other like-minded users.
             In addition to its main functionality, users can leave comments on events
@@ -40,10 +39,9 @@ const projects: Array<IProjects> = [
       imageUrl: '/images/projects/ff14_race_identifer.JPG',
       description: (
         <>
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary" paragraph>
             Real time object detection of races from the game Final Fantasy 14.
           </Typography>
-          <br />
           <Typography variant="body2" color="textSecondary">
             The frozen inference model was created by using Tensorflow&apos;s
             Object Detection API and retraining Google&apos;s
@@ -71,11 +69,10 @@ const projects: Array<IProjects> = [
       imageUrl: '/images/projects/shiny_colors_bot.JPG',
       description: (
         <>
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary" paragraph>
             Bot for the mobile game アイドルマスターシャイニ―カラーズ.
           </Typography>
-          <br />
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary" paragraph>
             Built using Python OpenCV, tkinter. This program opens up a
             GUI for user&apos;s to configure settings and allows the user to
             start and stop the program. The bot continually scans the
@@ -84,7 +81,6 @@ const projects: Array<IProjects> = [
             are injected into the game, as the bot uses on screen pixel
             data to make decisions.
           </Typography>
-          <br />
           <Typography variant="body2" color="textSecondary">
             Note that this program only works with screen resolutions
             around 1920 x 1080 px. The bot will only recognize images
@@ -109,10 +105,9 @@ const projects: Array<IProjects> = [
       imageUrl: '/images/projects/tic-tac-toe.JPG',
       description: (
         <>
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary" paragraph>
             Tic-Tac-Toe game made in Java with AI players.
           </Typography>
-          <br />
           <Typography variant="body2" color="textSecondary">
             The game runs in the terminal, asks for the names
             for the players, lets the human player choose the
@@ -137,16 +132,14 @@ const projects: Array<IProjects> = [
       imageUrl: '/images/projects/student_rep_app.JPG',
       description: (
         <>
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary" paragraph>
             Student registration app for registering courses made in Java.
           </Typography>
-          <br />
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary" paragraph>
             The app runs in the terminal, asks for the user if they
             are one of the few registered students or the system admin,
             and then runs the app.
           </Typography>
-          <br />
           <Typography variant="body2" color="textSecondary">
             Features a main menu with abilities such as adding and
             removing course offerings, looking up courses offered
@@ -171,16 +164,14 @@ const projects: Array<IProjects> = [
       imageUrl: '/images/projects/inventory_management.JPG',
       description: (
         <>
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary" paragraph>
             Retail store inventory management app, made in Java.
           </Typography>
-          <br />
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary" paragraph>
             The app runs in the terminal. At startup, the app parses data
             from tools.txt and suppliers.txt (which at like databases)
             and creates a list of these items to be used in the app.
           </Typography>
-          <br />
           <Typography variant="body2" color="textSecondary">
             Features a main menu with abilities such as checking tool stock,
             creating orders and writing the orders to orders.txt.

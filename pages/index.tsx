@@ -46,6 +46,10 @@ const StyledMenuIcon = styled.div`
   position: absolute;
   top: 50%;
   left: 0.5%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Home: React.FC = () => (

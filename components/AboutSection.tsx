@@ -5,7 +5,7 @@ const AboutSection: React.FC = () => (
   <Card>
     <CardContent>
       <Typography variant="h3">
-        About Me
+        About
       </Typography>
       <Typography variant="body1">
         Master of Engineering in Software Engineering.
