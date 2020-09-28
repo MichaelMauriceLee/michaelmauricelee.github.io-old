@@ -16,7 +16,7 @@ const StyledApp = styled(motion.div)`
   font-family: 'Verdana', 'san serif';
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 const StyledPage = styled.div`
