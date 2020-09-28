@@ -62,6 +62,12 @@ const StyledAbout = styled.div`
   padding: 2em;
 `;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
+const StyledTabs = styled((props) => <Tabs {...props} classes={{ indicator: 'indicator' }} />)`
+  && .indicator {
+    background-color: #FFF;
+  }
+`;
 interface TabPanelProps {
   children: React.ReactNode;
   index: unknown;
@@ -117,13 +123,13 @@ const About: React.FC = () => {
           <StyledPage>
             <StyledContainer>
               <AppBar position="static">
-                <Tabs
+                <StyledTabs
                   value={value}
                   onChange={handleChange}
                 >
                   <Tab label="Work Experience" />
                   <Tab label="Side Projects" />
-                </Tabs>
+                </StyledTabs>
               </AppBar>
               <TabPanel value={value} index={0}>
                 <motion.div variants={fadeInUp}>

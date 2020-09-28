@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Card, CardContent, CardMedia, Typography,
+  Card, CardContent, Typography,
 } from '@material-ui/core';
 import styled from 'styled-components';
 import IWorkExperience from '../interfaces/IWorkExperience';

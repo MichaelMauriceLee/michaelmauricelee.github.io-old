@@ -1,5 +1,19 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import {
+  Grid, Card, CardMedia, CardContent, Typography,
+} from '@material-ui/core';
+import styled from 'styled-components';
+import Carousel from 'react-material-ui-carousel';
+import carouselItems from '../data/carouselItems';
+
+const StyledCardContent = styled.div`
+  text-align: center;
+`;
+
+const StyledImage = styled.img`
+  width: 200px;
+  height: 200px;
+`;
 
 const AboutSection: React.FC = () => (
   <Card>
@@ -7,13 +21,47 @@ const AboutSection: React.FC = () => (
       <Typography variant="h3" component="h3">
         About
       </Typography>
-      <Typography variant="body1" component="div">
-        Master of Engineering in Software Engineering.
-        Proficient in web development using Python, Java, JavaScript,
-        C# as well as working with Microsoft Azure cloud services.
-        Has previous work experience in the oil and gas industry as a
-        Facilities Engineering Intern and as a Relief Field Operator.
+      <Typography variant="body1" component="div" paragraph>
+        I am a recently graduated software engineer with a
+        Master of Engineering degree in Software Engineering
+        from the University of Calgary, proficient in
+        full stack web development using React, Vue, Python, Java,
+        C# as well as using Microsoft Azure cloud services.
+        I also have experience in DevOps using Terraform, Azure DevOps,
+        and GitHub Actions.
       </Typography>
+      <Typography variant="body1" component="div" gutterBottom>
+        I was always been fascinated with new and upcoming technology
+        and decided to switch from pursuing a career in the oil
+        and gas industry to the tech industry.  I&apos;m passionate about
+        coding and constantly honing my programming skills
+        to stay up to date with current trends.
+      </Typography>
+      <Carousel animation="slide">
+        {carouselItems.map((panel) => (
+          <Grid
+            container
+            direction="row"
+            justify="space-evenly"
+            alignItems="stretch"
+          >
+            {panel.panelItems.map((item) => (
+              <Card style={{ border: 'none', boxShadow: 'none' }}>
+                <CardMedia>
+                  <StyledImage src={item.image} />
+                </CardMedia>
+                <CardContent>
+                  <StyledCardContent>
+                    <Typography variant="body2" component="div">
+                      {item.name}
+                    </Typography>
+                  </StyledCardContent>
+                </CardContent>
+              </Card>
+            ))}
+          </Grid>
+        ))}
+      </Carousel>
     </CardContent>
   </Card>
 );
