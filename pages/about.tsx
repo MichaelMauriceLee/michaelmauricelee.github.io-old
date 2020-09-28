@@ -14,7 +14,6 @@ import { motion } from 'framer-motion';
 import NavBar from '../components/NavBar';
 import ProjectCard from '../components/ProjectCard';
 import Link from '../components/Link';
-import ContactForm from '../components/ContactForm';
 import WorkExperienceCard from '../components/WorkExperienceCard';
 import workExperience from '../data/workExperience';
 import projects from '../data/projects';
@@ -26,7 +25,6 @@ const StyledApp = styled(motion.div)`
   padding: 0;
   min-height: 100vh;
   font-family: 'Verdana', 'san serif';
-  overflow:auto;
   display: flex;
   flex-direction: column;
   background-color: #6c757d;
@@ -177,9 +175,6 @@ const About: React.FC = () => {
               </TabPanel>
               <StyledAbout>
                 <AboutSection />
-              </StyledAbout>
-              <StyledAbout>
-                <ContactForm />
               </StyledAbout>
             </StyledContainer>
           </StyledPage>

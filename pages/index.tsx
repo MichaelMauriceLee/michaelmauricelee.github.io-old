@@ -19,8 +19,7 @@ const StyledApp = styled(motion.div)`
   height: 100vh;
 `;
 
-const StyledPage = styled(motion.div)`
-  position: relative;
+const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -54,6 +53,10 @@ const StyledMenuIcon = styled.div`
   }
 `;
 
+const StyledLogo = styled(motion.div)`
+  width: 20%;
+`;
+
 const Home: React.FC = () => (
   <div className="container">
     <Head>
@@ -76,8 +79,10 @@ const Home: React.FC = () => (
             <MenuIcon style={{ fill: 'white' }} />
           </IconButton>
         </StyledMenuIcon>
-        <StyledPage variants={fadeInUp}>
-          <Logo />
+        <StyledPage>
+          <StyledLogo variants={fadeInUp}>
+            <Logo />
+          </StyledLogo>
         </StyledPage>
       </StyledApp>
     </main>

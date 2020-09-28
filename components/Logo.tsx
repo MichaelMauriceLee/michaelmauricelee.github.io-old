@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledLogo = styled.div`
-  position: absolute;
   color: white;
-  width: 20%;
+  width: 100%;
   margin: auto;
 `;
 

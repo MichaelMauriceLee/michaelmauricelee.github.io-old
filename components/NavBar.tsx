@@ -17,6 +17,7 @@ const StyledNavBar = styled(AppBar)`
   justify-content: space-between;
   display: flex;
   padding: 1em;
+  z-index: 1;
   }
 `;
 
@@ -54,7 +55,7 @@ const NavBar: React.FC = () => {
         <StyledButton href="https://github.com/MichaelMauriceLee">
           GitHub
         </StyledButton>
-        <StyledButton component={Link} href="/about">
+        <StyledButton component={Link} href="/contact">
           Contact
         </StyledButton>
       </StyledButtonsRow>
