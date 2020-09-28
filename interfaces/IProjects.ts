@@ -3,7 +3,7 @@ interface IProjects {
     codeUrl: string;
     modalInfo: {
       imageUrl: string;
-      description: React.ReactNode;
+      description: Array<string>;
     }
     cardInfo: {
       imageUrl: string;

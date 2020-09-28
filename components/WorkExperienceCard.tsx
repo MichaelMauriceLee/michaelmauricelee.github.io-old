@@ -7,25 +7,38 @@ import IWorkExperience from '../interfaces/IWorkExperience';
 
 const StyledCard = styled(Card)`
   display: flex;
+  direction: row;
+  justify-content: space-between;
+`;
+
+const StyledImage = styled.img`
+  max-width: 500px;
+  max-height: 500px;
 `;
 
 const WorkExperienceCard: React.FC<IWorkExperience> = ({
   imageUrl, company, jobTitle, location, dateRange, description,
 }) => (
   <StyledCard>
-    <CardMedia component="img" image={imageUrl} />
+    <CardMedia>
+      <StyledImage src={imageUrl} />
+    </CardMedia>
     <CardContent>
-      <Typography gutterBottom variant="h5" component="h2">
+      <Typography variant="h4">
+        {jobTitle}
+      </Typography>
+      <Typography variant="h5" color="textSecondary">
         {company}
       </Typography>
       <Typography variant="body2" color="textSecondary">
-        {dateRange.startDate.month}
+        {dateRange.startDate}
+        {' '}
+        -
+        {' '}
+        {dateRange.endDate}
       </Typography>
       <Typography variant="body2" color="textSecondary">
         {location}
-      </Typography>
-      <Typography variant="body2" color="textSecondary">
-        {jobTitle}
       </Typography>
       {description}
     </CardContent>

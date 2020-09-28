@@ -154,20 +154,22 @@ const About: React.FC = () => {
               <TabPanel value={value} index={0}>
                 <Grid
                   container
+                  spacing={3}
                   direction="column"
                   justify="flex-start"
                   alignItems="stretch"
                 >
                   {workExperience.map((experience) => (
-                    <WorkExperienceCard
-                      key={workExperience.indexOf(experience)}
-                      imageUrl={experience.imageUrl}
-                      company={experience.company}
-                      jobTitle={experience.jobTitle}
-                      location={experience.location}
-                      dateRange={experience.dateRange}
-                      description={experience.description}
-                    />
+                    <Grid item key={workExperience.indexOf(experience)}>
+                      <WorkExperienceCard
+                        imageUrl={experience.imageUrl}
+                        company={experience.company}
+                        jobTitle={experience.jobTitle}
+                        location={experience.location}
+                        dateRange={experience.dateRange}
+                        description={experience.description}
+                      />
+                    </Grid>
                   ))}
                 </Grid>
               </TabPanel>

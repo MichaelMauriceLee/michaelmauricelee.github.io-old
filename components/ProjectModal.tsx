@@ -1,5 +1,5 @@
 import {
-  Button, CardMedia,
+  Button, CardMedia, Typography,
   Dialog, DialogActions, DialogContent, DialogTitle, IconButton,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
@@ -18,7 +18,7 @@ interface IProps {
   codeUrl: string;
   modalInfo: {
     imageUrl: string;
-    description: React.ReactNode;
+    description: Array<string>;
   }
   webAppInfo: {
     isWebApp: boolean;
@@ -45,7 +45,19 @@ const ProjectModal: React.FC<IProps> = ({
     </DialogTitle>
     <DialogContent dividers>
       <CardMedia component="img" image={modalInfo.imageUrl} />
-      {modalInfo.description}
+      {modalInfo.description.map((paragraph, index, arr) => (
+        index !== arr.length - 1
+          ? (
+            <Typography variant="body2" color="textSecondary" paragraph>
+              {paragraph}
+            </Typography>
+          )
+          : (
+            <Typography variant="body2" color="textSecondary">
+              {paragraph}
+            </Typography>
+          )
+      ))}
     </DialogContent>
     <DialogActions>
       {webAppInfo.isWebApp && (

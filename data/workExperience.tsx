@@ -9,10 +9,7 @@ const workExperience: Array<IWorkExperience> = [
     jobTitle: 'Software Developer',
     location: 'Calgary',
     dateRange: {
-      startDate: {
-        month: 'May',
-        year: 2020,
-      },
+      startDate: 'May 2020',
       endDate: 'Present',
     },
     description: (
@@ -39,14 +36,8 @@ const workExperience: Array<IWorkExperience> = [
     jobTitle: 'Intern, Facilities Engineering',
     location: 'Edmonton',
     dateRange: {
-      startDate: {
-        month: 'May',
-        year: 2017,
-      },
-      endDate: {
-        month: 'August',
-        year: 2018,
-      },
+      startDate: 'May 2017',
+      endDate: 'August 2018',
     },
     description: (
       <>
@@ -93,14 +84,8 @@ const workExperience: Array<IWorkExperience> = [
     jobTitle: 'Summer Student, Relief Operator',
     location: 'Lloydminster',
     dateRange: {
-      startDate: {
-        month: 'May',
-        year: 2016,
-      },
-      endDate: {
-        month: 'August',
-        year: 2016,
-      },
+      startDate: 'May 2016',
+      endDate: 'August 2016',
     },
     description: (
       <>
@@ -127,14 +112,8 @@ const workExperience: Array<IWorkExperience> = [
     jobTitle: 'Leader',
     location: 'Calgary',
     dateRange: {
-      startDate: {
-        month: 'July',
-        year: 2015,
-      },
-      endDate: {
-        month: 'August',
-        year: 2015,
-      },
+      startDate: 'July 2015',
+      endDate: 'August 2015',
     },
     description: (
       <>

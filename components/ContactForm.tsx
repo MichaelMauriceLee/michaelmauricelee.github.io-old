@@ -114,6 +114,18 @@ const Contact: React.FC = () => {
                   Contact
                 </Typography>
                 <Field
+                  name="name"
+                  render={({ input, meta }) => (
+                    <StyledTextField
+                      label="Name"
+                      color="primary"
+                      helperText={meta.touched ? meta.error : undefined}
+                      error={meta.error && meta.touched}
+                      {...input}
+                    />
+                  )}
+                />
+                <Field
                   name="email"
                   render={({ input, meta }) => (
                     <StyledTextField
@@ -140,23 +152,11 @@ const Contact: React.FC = () => {
                 <Field
                   name="message"
                   render={({ input, meta }) => (
-                    <StyledTextField
+                    <TextField
                       label="Message"
                       color="primary"
                       multiline
-                      rows={10}
-                      helperText={meta.touched ? meta.error : undefined}
-                      error={meta.error && meta.touched}
-                      {...input}
-                    />
-                  )}
-                />
-                <Field
-                  name="name"
-                  render={({ input, meta }) => (
-                    <TextField
-                      label="Name"
-                      color="primary"
+                      rows={20}
                       helperText={meta.touched ? meta.error : undefined}
                       error={meta.error && meta.touched}
                       {...input}

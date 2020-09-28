@@ -8,11 +8,6 @@ interface IStyledButtonsRow {
   justifyContent: string;
 }
 
-interface IStyledButton {
-  component: any;
-  href: string;
-}
-
 const StyledNavBar = styled(AppBar)`
   && {
   position: sticky;

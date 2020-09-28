@@ -4,14 +4,8 @@ interface IWorkExperience {
     jobTitle: string,
     location: string,
     dateRange: {
-        startDate: {
-          month: string,
-          year: number
-        },
-        endDate: {
-          month: string,
-          year: number
-        } | string
+      startDate: string,
+      endDate: string
     },
     description: React.ReactNode
 }
