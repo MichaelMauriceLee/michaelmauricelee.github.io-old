@@ -59,11 +59,7 @@ const Home: React.FC = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main>
-      <StyledApp
-        exit={{ opacity: 0 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
+      <StyledApp>
         <StyledBackgroundVideo loop autoPlay muted>
           <source src="/videos/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.

@@ -19,31 +19,8 @@ import WorkExperienceCard from '../components/WorkExperienceCard';
 import workExperience from '../data/workExperience';
 import projects from '../data/projects';
 import AboutSection from '../components/AboutSection';
-
-const easing = [0.6, -0.05, 0.01, 0.99];
-
-const fadeInUp = {
-  initial: {
-    y: 60,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: easing,
-    },
-  },
-};
-
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
+import fadeInUp from '../animations/fadeInUp';
+import staggered from '../animations/staggered';
 
 const StyledApp = styled(motion.div)`
   margin: 0;
@@ -159,40 +136,46 @@ const About: React.FC = () => {
                   justify="flex-start"
                   alignItems="stretch"
                 >
-                  {workExperience.map((experience) => (
-                    <Grid item key={workExperience.indexOf(experience)}>
-                      <WorkExperienceCard
-                        imageUrl={experience.imageUrl}
-                        company={experience.company}
-                        jobTitle={experience.jobTitle}
-                        location={experience.location}
-                        dateRange={experience.dateRange}
-                        description={experience.description}
-                      />
-                    </Grid>
-                  ))}
+                  <motion.div variants={staggered}>
+                    {workExperience.map((experience) => (
+                      <motion.div variants={fadeInUp}>
+                        <Grid item key={workExperience.indexOf(experience)}>
+                          <WorkExperienceCard
+                            imageUrl={experience.imageUrl}
+                            company={experience.company}
+                            jobTitle={experience.jobTitle}
+                            location={experience.location}
+                            dateRange={experience.dateRange}
+                            description={experience.description}
+                          />
+                        </Grid>
+                      </motion.div>
+                    ))}
+                  </motion.div>
                 </Grid>
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <Grid
-                  container
-                  spacing={3}
-                  direction="row"
-                  justify="flex-start"
-                  alignItems="flex-start"
-                >
-                  {projects.map((project) => (
-                    <Grid item xs={12} sm={6} md={4} key={projects.indexOf(project)}>
-                      <ProjectCard
-                        title={project.title}
-                        codeUrl={project.codeUrl}
-                        modalInfo={project.modalInfo}
-                        cardInfo={project.cardInfo}
-                        webAppInfo={project.webAppInfo}
-                      />
-                    </Grid>
-                  ))}
-                </Grid>
+                <motion.div variants={fadeInUp}>
+                  <Grid
+                    container
+                    spacing={3}
+                    direction="row"
+                    justify="flex-start"
+                    alignItems="flex-start"
+                  >
+                    {projects.map((project) => (
+                      <Grid item xs={12} sm={6} md={4} key={projects.indexOf(project)}>
+                        <ProjectCard
+                          title={project.title}
+                          codeUrl={project.codeUrl}
+                          modalInfo={project.modalInfo}
+                          cardInfo={project.cardInfo}
+                          webAppInfo={project.webAppInfo}
+                        />
+                      </Grid>
+                    ))}
+                  </Grid>
+                </motion.div>
               </TabPanel>
               <StyledAbout>
                 <AboutSection />
