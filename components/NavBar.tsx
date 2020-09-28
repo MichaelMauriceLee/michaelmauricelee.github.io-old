@@ -4,10 +4,6 @@ import { AppBar, Button } from '@material-ui/core';
 import { useRouter } from 'next/router';
 import Link from './Link';
 
-interface IStyledButtonsRow {
-  justifyContent: string;
-}
-
 const StyledNavBar = styled(AppBar)`
   && {
   position: sticky;
@@ -22,42 +18,50 @@ const StyledNavBar = styled(AppBar)`
 `;
 
 const StyledButtonsRow = styled.div`
-  justify-content: ${(props: IStyledButtonsRow) => props.justifyContent};
+  justify-content: flex-start;
 `;
 
-const StyledButton = styled(Button)`
-  && {
+const StyledButtonText = styled.div`
   color: white;
-  }
 `;
 
 const NavBar: React.FC = () => {
   const router = useRouter();
   return (
     <StyledNavBar>
-      <StyledButtonsRow justifyContent="flex-start">
+      <StyledButtonsRow>
         {router.pathname === '/'
           ? (
-            <StyledButton component={Link} href="/about">
-              About
-            </StyledButton>
+            <Button component={Link} href="/about">
+              <StyledButtonText>
+                About
+              </StyledButtonText>
+            </Button>
           )
           : (
-            <StyledButton component={Link} href="/">
-              Home
-            </StyledButton>
+            <Button component={Link} href="/">
+              <StyledButtonText>
+                Home
+              </StyledButtonText>
+            </Button>
           )}
       </StyledButtonsRow>
-      <StyledButtonsRow justifyContent="flex-end">
-        <StyledButton href="https://www.linkedin.com/in/michael-lee-8967b614a/">
-          LinkedIn
-        </StyledButton>
-        <StyledButton href="https://github.com/MichaelMauriceLee">
-          GitHub
-        </StyledButton>
-        <StyledButton component={Link} href="/contact">
-          Contact
-        </StyledButton>
+      <StyledButtonsRow>
+        <Button href="https://www.linkedin.com/in/michael-lee-8967b614a/">
+          <StyledButtonText>
+            LinkedIn
+          </StyledButtonText>
+        </Button>
+        <Button href="https://github.com/MichaelMauriceLee">
+          <StyledButtonText>
+            GitHub
+          </StyledButtonText>
+        </Button>
+        <Button component={Link} href="/contact">
+          <StyledButtonText>
+            Contact
+          </StyledButtonText>
+        </Button>
       </StyledButtonsRow>
     </StyledNavBar>
   );
