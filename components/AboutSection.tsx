@@ -4,10 +4,10 @@ import { Card, CardContent, Typography } from '@material-ui/core';
 const AboutSection: React.FC = () => (
   <Card>
     <CardContent>
-      <Typography variant="h3">
+      <Typography variant="h3" component="h3">
         About
       </Typography>
-      <Typography variant="body1">
+      <Typography variant="body1" component="div">
         Master of Engineering in Software Engineering.
         Proficient in web development using Python, Java, JavaScript,
         C# as well as working with Microsoft Azure cloud services.

@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import NavBar from '../components/NavBar';
 import Logo from '../components/Logo';
 import Link from '../components/Link';
+import fadeInUp from '../animations/fadeInUp';
 
 // TODO refactor
 const StyledApp = styled(motion.div)`
@@ -18,7 +19,8 @@ const StyledApp = styled(motion.div)`
   height: 100vh;
 `;
 
-const StyledPage = styled.div`
+const StyledPage = styled(motion.div)`
+  position: relative;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -59,7 +61,11 @@ const Home: React.FC = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main>
-      <StyledApp>
+      <StyledApp
+        exit={{ opacity: 0 }}
+        initial="initial"
+        animate="animate"
+      >
         <StyledBackgroundVideo loop autoPlay muted>
           <source src="/videos/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -70,7 +76,7 @@ const Home: React.FC = () => (
             <MenuIcon style={{ fill: 'white' }} />
           </IconButton>
         </StyledMenuIcon>
-        <StyledPage>
+        <StyledPage variants={fadeInUp}>
           <Logo />
         </StyledPage>
       </StyledApp>

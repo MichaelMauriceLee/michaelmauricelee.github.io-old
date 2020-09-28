@@ -24,33 +24,33 @@ const WorkExperienceCard: React.FC<IWorkExperience> = ({
       <StyledImage src={imageUrl} />
     </CardMedia>
     <CardContent>
-      <Typography variant="h4">
+      <Typography variant="h4" component="h4">
         {jobTitle}
       </Typography>
-      <Typography variant="h5" color="textSecondary">
+      <Typography variant="h5" component="h5" color="textSecondary">
         {company}
       </Typography>
-      <Typography variant="body2" color="textSecondary">
+      <Typography variant="body2" component="div" color="textSecondary">
         {dateRange.startDate}
         {' '}
         -
         {' '}
         {dateRange.endDate}
       </Typography>
-      <Typography variant="body2" color="textSecondary" gutterBottom>
+      <Typography variant="body2" component="div" color="textSecondary" gutterBottom>
         {location}
       </Typography>
       {description.map((sentence, index, arr) => (
         index !== arr.length - 1
           ? (
-            <Typography variant="body2" key={sentence}>
+            <Typography variant="body2" component="div" key={sentence}>
               ◦
               {' '}
               {sentence}
             </Typography>
           )
           : (
-            <Typography variant="body2" key={sentence} gutterBottom>
+            <Typography variant="body2" component="div" key={sentence} gutterBottom>
               ◦
               {' '}
               {sentence}
@@ -58,12 +58,12 @@ const WorkExperienceCard: React.FC<IWorkExperience> = ({
           )
       ))}
       {achievements && (
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6" component="h6" gutterBottom>
         Notable Accomplishments
       </Typography>
       )}
       {achievements && achievements.map((sentence) => (
-        <Typography variant="body2" key={sentence}>
+        <Typography variant="body2" component="div" key={sentence}>
           ‣
           {' '}
           {sentence}

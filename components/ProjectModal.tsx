@@ -48,12 +48,12 @@ const ProjectModal: React.FC<IProps> = ({
       {modalInfo.description.map((paragraph, index, arr) => (
         index !== arr.length - 1
           ? (
-            <Typography variant="body2" color="textSecondary" paragraph>
+            <Typography variant="body2" component="div" color="textSecondary" paragraph>
               {paragraph}
             </Typography>
           )
           : (
-            <Typography variant="body2" color="textSecondary">
+            <Typography variant="body2" component="div" color="textSecondary">
               {paragraph}
             </Typography>
           )

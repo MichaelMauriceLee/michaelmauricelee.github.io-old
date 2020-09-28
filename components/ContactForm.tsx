@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
             >
               {submitting && <LinearProgress />}
               <StyledForm>
-                <Typography variant="h3">
+                <Typography variant="h3" component="h3">
                   Contact
                 </Typography>
                 <Field
