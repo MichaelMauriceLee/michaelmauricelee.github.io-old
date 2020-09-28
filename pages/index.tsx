@@ -54,7 +54,7 @@ const StyledMenuIcon = styled.div`
 `;
 
 const StyledLogo = styled(motion.div)`
-  width: 20%;
+  width: 50%;
 `;
 
 const Home: React.FC = () => (

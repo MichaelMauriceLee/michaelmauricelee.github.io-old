@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Typography } from '@material-ui/core';
 
 const StyledLogo = styled.div`
   color: white;
@@ -7,27 +8,30 @@ const StyledLogo = styled.div`
   margin: auto;
 `;
 
-const TopText = styled.h6`
+const TopText = styled(Typography)`
   text-align: left;
+  font-size: 150%;
 `;
 
-const MiddleText = styled.h1`
-  text-align: left;
+const MiddleText = styled(Typography)`
+  text-align: center;
+  font-size: 425%;
 `;
 
-const BottomText = styled.h6`
+const BottomText = styled(Typography)`
   text-align: right;
+  font-size: 150%;
 `;
 
 const Logo: React.FC = () => (
   <StyledLogo>
-    <TopText>
+    <TopText variant="h6">
       Software Engineer
     </TopText>
-    <MiddleText>
+    <MiddleText variant="h1">
       Michael Lee
     </MiddleText>
-    <BottomText>
+    <BottomText variant="h6">
       Web Development
     </BottomText>
   </StyledLogo>

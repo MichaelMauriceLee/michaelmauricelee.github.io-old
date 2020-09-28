@@ -22,7 +22,7 @@ const workExperience: Array<IWorkExperience> = [
     ],
   },
   {
-    imageUrl: '/images/work-experience/atco.jpg',
+    imageUrl: '/images/work-experience/atco.png',
     company: 'ATCO Gas Transmission',
     jobTitle: 'Intern, Facilities Engineering',
     location: 'Edmonton',

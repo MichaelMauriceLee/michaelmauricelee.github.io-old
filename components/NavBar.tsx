@@ -25,7 +25,7 @@ const StyledButtonsRow = styled.div`
   justify-content: ${(props: IStyledButtonsRow) => props.justifyContent};
 `;
 
-const StyledButton: any = styled(Button)`
+const StyledButton = styled(Button)`
   && {
   color: white;
   }
