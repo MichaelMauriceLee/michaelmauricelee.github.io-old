@@ -17,7 +17,7 @@ const StyledImage = styled.img`
 `;
 
 const WorkExperienceCard: React.FC<IWorkExperience> = ({
-  imageUrl, company, jobTitle, location, dateRange, description,
+  imageUrl, company, jobTitle, location, dateRange, description, achievements,
 }) => (
   <StyledCard>
     <CardMedia>
@@ -37,10 +37,38 @@ const WorkExperienceCard: React.FC<IWorkExperience> = ({
         {' '}
         {dateRange.endDate}
       </Typography>
-      <Typography variant="body2" color="textSecondary">
+      <Typography variant="body2" color="textSecondary" gutterBottom>
         {location}
       </Typography>
-      {description}
+      {description.map((sentence, index, arr) => (
+        index !== arr.length - 1
+          ? (
+            <Typography variant="body2" key={sentence}>
+              ◦
+              {' '}
+              {sentence}
+            </Typography>
+          )
+          : (
+            <Typography variant="body2" key={sentence} gutterBottom>
+              ◦
+              {' '}
+              {sentence}
+            </Typography>
+          )
+      ))}
+      {achievements && (
+      <Typography variant="h6" gutterBottom>
+        Notable Accomplishments
+      </Typography>
+      )}
+      {achievements && achievements.map((sentence) => (
+        <Typography variant="body2" key={sentence}>
+          ‣
+          {' '}
+          {sentence}
+        </Typography>
+      ))}
     </CardContent>
   </StyledCard>
 );

@@ -7,7 +7,8 @@ interface IWorkExperience {
       startDate: string,
       endDate: string
     },
-    description: React.ReactNode
+    description: Array<string>,
+    achievements: Array<string> | null
 }
 
 // eslint-disable-next-line no-undef

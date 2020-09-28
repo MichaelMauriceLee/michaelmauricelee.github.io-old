@@ -20,7 +20,6 @@ import workExperience from '../data/workExperience';
 import projects from '../data/projects';
 import AboutSection from '../components/AboutSection';
 import fadeInUp from '../animations/fadeInUp';
-import staggered from '../animations/staggered';
 
 const StyledApp = styled(motion.div)`
   margin: 0;
@@ -129,30 +128,29 @@ const About: React.FC = () => {
                 </Tabs>
               </AppBar>
               <TabPanel value={value} index={0}>
-                <Grid
-                  container
-                  spacing={3}
-                  direction="column"
-                  justify="flex-start"
-                  alignItems="stretch"
-                >
-                  <motion.div variants={staggered}>
+                <motion.div variants={fadeInUp}>
+                  <Grid
+                    container
+                    spacing={3}
+                    direction="column"
+                    justify="flex-start"
+                    alignItems="stretch"
+                  >
                     {workExperience.map((experience) => (
-                      <motion.div variants={fadeInUp}>
-                        <Grid item key={workExperience.indexOf(experience)}>
-                          <WorkExperienceCard
-                            imageUrl={experience.imageUrl}
-                            company={experience.company}
-                            jobTitle={experience.jobTitle}
-                            location={experience.location}
-                            dateRange={experience.dateRange}
-                            description={experience.description}
-                          />
-                        </Grid>
-                      </motion.div>
+                      <Grid item key={workExperience.indexOf(experience)}>
+                        <WorkExperienceCard
+                          imageUrl={experience.imageUrl}
+                          company={experience.company}
+                          jobTitle={experience.jobTitle}
+                          location={experience.location}
+                          dateRange={experience.dateRange}
+                          description={experience.description}
+                          achievements={experience.achievements}
+                        />
+                      </Grid>
                     ))}
-                  </motion.div>
-                </Grid>
+                  </Grid>
+                </motion.div>
               </TabPanel>
               <TabPanel value={value} index={1}>
                 <motion.div variants={fadeInUp}>
