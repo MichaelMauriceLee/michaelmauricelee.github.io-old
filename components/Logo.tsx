@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Typography } from '@material-ui/core';
+import Link from './Link';
 
 const StyledLogo = styled.div`
   color: white;
@@ -24,17 +25,19 @@ const BottomText = styled(Typography)`
 `;
 
 const Logo: React.FC = () => (
-  <StyledLogo>
-    <TopText variant="h6">
-      Software Engineer
-    </TopText>
-    <MiddleText variant="h1">
-      Michael Lee
-    </MiddleText>
-    <BottomText variant="h6">
-      Web Development
-    </BottomText>
-  </StyledLogo>
+  <Link href="/about" style={{ textDecorationColor: 'white' }}>
+    <StyledLogo>
+      <TopText variant="h6">
+        Software Engineer
+      </TopText>
+      <MiddleText variant="h1">
+        Michael Lee
+      </MiddleText>
+      <BottomText variant="h6">
+        Web Development
+      </BottomText>
+    </StyledLogo>
+  </Link>
 );
 
 export default Logo;

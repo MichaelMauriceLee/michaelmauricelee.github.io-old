@@ -32,14 +32,14 @@ const NavBar: React.FC = () => {
       <StyledButtonsRow>
         {router.pathname === '/'
           ? (
-            <Button component={Link} href="/about" style={{ textDecoration: 'none' }}>
+            <Button component={Link} href="/about" style={{ textDecorationColor: 'white' }}>
               <StyledButtonText>
                 About
               </StyledButtonText>
             </Button>
           )
           : (
-            <Button component={Link} href="/" style={{ textDecoration: 'none' }}>
+            <Button component={Link} href="/" style={{ textDecorationColor: 'white' }}>
               <StyledButtonText>
                 Home
               </StyledButtonText>
@@ -57,7 +57,7 @@ const NavBar: React.FC = () => {
             GitHub
           </StyledButtonText>
         </Button>
-        <Button component={Link} href="/contact" style={{ textDecoration: 'none' }}>
+        <Button component={Link} href="/contact" style={{ textDecorationColor: 'white' }}>
           <StyledButtonText>
             Contact
           </StyledButtonText>
