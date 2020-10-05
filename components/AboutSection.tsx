@@ -31,7 +31,7 @@ const AboutSection: React.FC = () => (
         and GitHub Actions.
       </Typography>
       <Typography variant="body1" component="div" gutterBottom>
-        I was always been fascinated with new and upcoming technology
+        I have always been fascinated with new and upcoming technology,
         and decided to switch from pursuing a career in the oil
         and gas industry to the tech industry.  I&apos;m passionate about
         coding and constantly honing my programming skills
