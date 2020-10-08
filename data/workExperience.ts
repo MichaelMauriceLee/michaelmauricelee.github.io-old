@@ -11,14 +11,16 @@ const workExperience: Array<IWorkExperience> = [
       endDate: 'Present',
     },
     description: [
-      `Developing a full stack enterprise resource planning web application
-      as part of a developer team working for a daycare SaaS start-up.`,
+      `Developing a full stack enterprise resource planning web application as part of a daycare SaaS start-up.
+      Technologies used include Cosmos DB, Azure Functions with C# for serverless API backend, and Vue.js for single page application.`,
     ],
     achievements: [
-      `Designing and implementing business logic and database schema in order to
-      allow administration staff to perform CRUD operations on programs as well
-      as tracking the timing of students’ arrival and departures
-      and their associated charges.`,
+      `Designing and implementing business logic allowing administration staff
+      to perform CRUD operations on programs as well as tracking the timing
+      of students’ arrival and departures and their associated charges.`,
+      `Designing and implementing Cosmos DB document partitioning
+      and concurrent document update strategies, on change data handlers, and
+      CI/CD pipelines for our various microservices.`,
     ],
   },
   {
