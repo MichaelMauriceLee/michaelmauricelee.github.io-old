@@ -15,7 +15,7 @@ const workExperience: Array<IWorkExperience> = [
       Technologies used include Cosmos DB, Azure Functions with C# for serverless API backend, and Vue.js for single page application.`,
     ],
     achievements: [
-      `Designing and implementing business logic allowing administration staff
+      `Designing and implementing business logic to allow administration staff
       to perform CRUD operations on programs as well as tracking the timing
       of students’ arrival and departures and their associated charges.`,
       `Designing and implementing Cosmos DB document partitioning
