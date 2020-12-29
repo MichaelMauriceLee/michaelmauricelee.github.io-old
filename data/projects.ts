@@ -25,7 +25,7 @@ const projects: Array<IProjects> = [
     },
   },
   {
-    title: 'Tensorflow Real Time Object Detection Program',
+    title: 'TensorFlow Real Time Object Detection Program',
     codeUrl: 'https://github.com/MichaelMauriceLee/FF14-Race-Identifer',
     modalInfo: {
       imageUrl: '/images/projects/ff14_race_identifer.JPG',

@@ -15,10 +15,12 @@ const workExperience: Array<IWorkExperience> = [
       Technologies used include Cosmos DB, Azure Functions with C# for serverless API backend, and Vue.js for single page application.`,
     ],
     achievements: [
-      `Designing and implementing business logic to allow administration staff
-      to perform CRUD operations on programs as well as tracking the timing
+      `Designing and implementing the database schema and business rules for the operations microservice
+      to allow administration staff to perform CRUD operations on programs as well as tracking the timing
       of students’ arrival and departures and their associated charges.`,
-      `Designing and implementing Cosmos DB document partitioning
+      `Designing and implementing the database schema and business rules for the payment microservice that
+      handles various forms of payment as well as interfacing with third party APIs like QuickBooks and Rotessa.`,
+      `Designing and implementing overall Cosmos DB document partitioning
       and concurrent document update strategies, on change data handlers, and
       CI/CD pipelines for our various microservices.`,
     ],
