@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import Head from 'next/head';
@@ -24,6 +25,7 @@ const MyApp: React.FC<IMyApp> = ({ Component, pageProps }) => {
       <Head>
         <title>My page</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <meta name="image" property="og:image" content="/images/programming/azure-devops.png" />
       </Head>
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />

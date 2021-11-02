@@ -25,7 +25,7 @@ const AboutSection: React.FC = () => (
         I am a recently graduated software engineer with a
         Master of Engineering degree in Software Engineering
         from the University of Calgary, proficient in
-        full stack web development using React, Vue, Python, Java,
+        full stack web development using React, Vue, Java,
         C# as well as using Microsoft Azure cloud services.
         I also have experience in DevOps using Terraform, Azure DevOps,
         and GitHub Actions.

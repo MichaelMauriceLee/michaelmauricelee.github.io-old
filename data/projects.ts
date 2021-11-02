@@ -25,6 +25,28 @@ const projects: Array<IProjects> = [
     },
   },
   {
+    title: 'Next-Gen Japanese-English Dictionary Web Application',
+    codeUrl: 'https://github.com/MichaelMauriceLee/chie',
+    modalInfo: {
+      imageUrl: '/images/projects/connectivities.JPG',
+      description: [
+        `Full stack Japanese-English web application with voice and image recognition,
+        built using NextJS, Azure Functions, Azure Cognitive Services, Jisho API, and deployed on Vercel.`,
+        `Users can create and search for events and other like-minded users.
+        In addition to its main functionality, users can leave comments on
+        events and upload photos to their profile, as well as keep a list of followers.`,
+      ],
+    },
+    cardInfo: {
+      imageUrl: '/images/projects/connectivities_sm.JPG',
+      description: 'Social media application similar to meetup.com',
+    },
+    webAppInfo: {
+      isWebApp: true,
+      webAppURL: 'https://www.chie.app/',
+    },
+  },
+  {
     title: 'TensorFlow Real Time Object Detection Program',
     codeUrl: 'https://github.com/MichaelMauriceLee/FF14-Race-Identifer',
     modalInfo: {
