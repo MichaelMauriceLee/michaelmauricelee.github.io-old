@@ -11,7 +11,7 @@ const fadeInUp: Variants = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.6,
+      duration: 1.5,
       ease: easing,
     },
   },
