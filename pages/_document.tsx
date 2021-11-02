@@ -41,8 +41,8 @@ class MyDocument extends Document {
           <meta name="application-name" content="Michael Lee's Portfolio" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-          <meta name="apple-mobile-web-app-title" content="ML's Portfolio" />
-          <meta name="description" content="Best PWA App in the world" />
+          <meta name="apple-mobile-web-app-title" content="Portfolio" />
+          <meta name="description" content="Michael Lee's Portfolio" />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="msapplication-config" content="/static/icons/browserconfig.xml" />
@@ -58,17 +58,18 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:url" content="https://yourdomain.com" />
-          <meta name="twitter:title" content="PWA App" />
-          <meta name="twitter:description" content="Best PWA App in the world" />
-          <meta name="twitter:image" content="https://yourdomain.com/static/icons/android-chrome-192x192.png" />
-          <meta name="twitter:creator" content="@DavidWShadow" />
+          <meta name="twitter:url" content="https://michaelmauricelee.github.io" />
+          <meta name="twitter:title" content="Portfolio" />
+          <meta name="twitter:description" content="Michael Lee's Portfolio" />
+          <meta name="twitter:image" content="https://michaelmauricelee.github.io/android-chrome-192x192.png" />
+          <meta name="twitter:creator" content="@MichaelLee" />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="PWA App" />
-          <meta property="og:description" content="Best PWA App in the world" />
-          <meta property="og:site_name" content="PWA App" />
-          <meta property="og:url" content="https://yourdomain.com" />
-          <meta property="og:image" content="https://yourdomain.com/static/icons/apple-touch-icon.png" />
+          <meta property="og:title" content="Portfolio" />
+          <meta property="og:description" content="Michael Lee's Portfolio" />
+          <meta property="og:site_name" content="Portfolio" />
+          <meta property="og:url" content="https://michaelmauricelee.github.io" />
+          <meta name="image" property="og:image" content="https://michaelmauricelee.github.io/images/programming/azure-devops.png" />
+          <meta name="author" content="Michael Lee" />
           {/* PWA primary color */}
         </Head>
         <body>
