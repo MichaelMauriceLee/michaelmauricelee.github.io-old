@@ -97,7 +97,8 @@ const Contact: React.FC = () => {
                 setMessage('Email successfully sent!');
                 // @ts-ignore
                 form.restart();
-              } catch (err) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              } catch (err: any) {
                 setSeverity('error');
                 setMessage(err.text);
               } finally {
