@@ -9,7 +9,6 @@ import Logo from '../components/Logo';
 import Link from '../components/Link';
 import fadeInUp from '../animations/fadeInUp';
 
-// TODO refactor
 const StyledApp = styled(motion.div)`
   margin: 0;
   padding: 0;

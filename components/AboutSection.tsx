@@ -22,18 +22,17 @@ const AboutSection: React.FC = () => (
         About
       </Typography>
       <Typography variant="body1" component="div" paragraph>
-        I am a recently graduated software engineer with a
+        I am a software engineer with a
         Master of Engineering degree in Software Engineering
         from the University of Calgary, proficient in
         full stack web development using React, Vue, Java,
-        C# as well as using Microsoft Azure cloud services.
+        C#, and using Microsoft Azure.
         I also have experience in DevOps using Terraform, Azure DevOps,
         and GitHub Actions.
       </Typography>
       <Typography variant="body1" component="div" gutterBottom>
-        I have always been fascinated with new and upcoming technology,
-        and decided to switch from pursuing a career in the oil
-        and gas industry to the tech industry.  I&apos;m passionate about
+        I have always been fascinated with new and upcoming technology.
+        I&apos;m passionate about
         coding and constantly honing my programming skills
         to stay up to date with current trends.
       </Typography>

@@ -60,8 +60,8 @@ const carouselItems: Array<ICarouselItem> = [
         image: '/images/programming/java.png',
       },
       {
-        name: 'Python',
-        image: '/images/programming/python.png',
+        name: 'TypeScript',
+        image: '/images/programming/typescript.jpeg',
       },
       {
         name: 'C#',

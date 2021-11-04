@@ -2,7 +2,7 @@ import IWorkExperience from '../interfaces/IWorkExperience';
 
 const workExperience: Array<IWorkExperience> = [
   {
-    imageUrl: '/images/work-experience/cf.png',
+    imageUrl: '/images/work-experience/morgan stanley.jpg',
     company: 'Morgan Stanley',
     jobTitle: 'Software Developer',
     location: 'Calgary',
@@ -11,18 +11,13 @@ const workExperience: Array<IWorkExperience> = [
       endDate: 'Present',
     },
     description: [
-      `Developing a full stack enterprise resource planning web application as part of a daycare SaaS start-up.
-      Technologies used include Cosmos DB, Azure Functions with C# for serverless API backend, and Vue.js for single page application.`,
+      'Working on an existing full stack web application in an agile environment.  Currently using technologies such as Oracle SQL and Java.',
+      'Recommend Program Managers on technical solutions that can meet business requirements and then follow with implementation.',
     ],
     achievements: [
-      `Designing and implementing the database schema and business rules for the operations microservice
-      to allow administration staff to perform CRUD operations on programs as well as tracking the timing
-      of students’ arrival and departures and their associated charges.`,
-      `Designing and implementing the database schema and business rules for the payment microservice that
-      handles various forms of payment as well as interfacing with third party APIs like QuickBooks and Rotessa.`,
-      `Designing and implementing overall Cosmos DB document partitioning
-      and concurrent document update strategies, on change data handlers, and
-      CI/CD pipelines for our various microservices.`,
+      'Modified data validation to allow Cisco migration to Shareworks software.',
+      'Adjusted fee generation to ensure 100% accuracy of money transfer to clients.',
+      'Created a process workflow and scripts to check the validity of data for the current validation library.',
     ],
   },
   {
