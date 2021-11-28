@@ -31,7 +31,7 @@ const projects: Array<IProjects> = [
       imageUrl: '/images/projects/chie.JPG',
       description: [
         `Full stack Japanese-English dictionary web application with voice, image recognition, and Anki integration.
-        Built using Next.js, Azure Cognitive Services, and deployed on Vercel.`,
+        Built using Next.js and various serverless Azure services`,
         `Users can search up defintions of words in either Japanese or English and add them to Anki flashcards easily.
         Users can also upload images to do text recognition as well as audio for transcription`,
       ],
