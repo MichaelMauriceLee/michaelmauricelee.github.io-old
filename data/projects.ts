@@ -42,7 +42,7 @@ const projects: Array<IProjects> = [
     },
     webAppInfo: {
       isWebApp: true,
-      webAppURL: 'https://www.chie.vercel.app/',
+      webAppURL: 'https://chie.vercel.app/',
     },
   },
   {
