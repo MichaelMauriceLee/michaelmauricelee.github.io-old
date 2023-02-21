@@ -69,32 +69,6 @@ const projects: Array<IProjects> = [
     },
   },
   {
-    title: 'Event-Driven Mobile Game Bot with GUI',
-    codeUrl: 'https://github.com/MichaelMauriceLee/Shiny-Colors-Bot-1920-x-1080',
-    modalInfo: {
-      imageUrl: '/images/projects/shiny_colors_bot.JPG',
-      description: [
-        'Bot for the mobile game アイドルマスターシャイニ―カラーズ.',
-        `Built using Python OpenCV, tkinter. This program opens up a GUI for users'
-        to configure settings and allows the user to start and stop the program.
-        The bot continually scans the play area, and when a series of buttons pops up,
-        uses the mouse to click on the buttons in a set sequence. No files are
-        injected into the game, as the bot uses on screen pixel data to make decisions.`,
-        `Note that this program only works with screen resolutions around 1920 x 1080 px.
-        The bot will only recognize images when around 80% of the image on screen matches
-        the image stored in its database.`,
-      ],
-    },
-    cardInfo: {
-      imageUrl: '/images/projects/shiny_colors_bot_sm.JPG',
-      description: 'Bot for the mobile game アイドルマスターシャイニ―カラーズ.',
-    },
-    webAppInfo: {
-      isWebApp: false,
-      webAppURL: undefined,
-    },
-  },
-  {
     title: 'Tic-Tac-Toe',
     codeUrl: 'https://github.com/MichaelMauriceLee/Tic-Tac-Toe',
     modalInfo: {

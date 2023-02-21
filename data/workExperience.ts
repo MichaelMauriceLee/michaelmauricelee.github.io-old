@@ -1,53 +1,53 @@
-import IWorkExperience from '../interfaces/IWorkExperience';
+import IWorkExperience from "../interfaces/IWorkExperience";
 
 const workExperience: Array<IWorkExperience> = [
   {
-    imageUrl: '/images/work-experience/morgan stanley.jpg',
-    company: 'Morgan Stanley',
-    jobTitle: 'Software Developer',
-    location: 'Calgary',
+    imageUrl: "/images/work-experience/morgan stanley.jpg",
+    company: "Morgan Stanley at Work",
+    jobTitle: "Software Developer",
+    location: "Calgary",
     dateRange: {
-      startDate: 'May 2021',
-      endDate: 'Present',
+      startDate: "May 2021",
+      endDate: "Present",
     },
     description: [
-      'Working on an existing full stack web application in an agile environment.  Currently using technologies such as Oracle SQL and Java.',
-      'Recommend Program Managers on technical solutions that can meet business requirements and then follow with implementation.',
+      "Working on an existing full stack web application in an agile environment.  Currently using technologies such as React, Spring Boot, GWT, and Oracle SQL.",
+      "Recommend Program Managers on technical solutions that can meet business requirements and then follow with implementation.",
     ],
     achievements: [
-      'Modified data validation to allow Cisco migration to Shareworks software.',
-      'Adjusted fee generation to ensure 100% accuracy of money transfer to clients.',
-      'Created a process workflow and scripts to check the validity of data for the current validation library.',
+      "Created new functionality to allow for trading of private company stock certificates between select users.",
+      "Led discussions around including new technologies such as Redux Toolkit and Vite into our new investor web application.",
+      "Assisted Cisco in migrating onto the web application by modifying data validation rules.",
+      "Created new workflow and scripts to periodically check phone number validity on hundreds of phone numbers that exist in the database.",
     ],
   },
   {
-    imageUrl: '/images/work-experience/cf.png',
-    company: 'Child Friendly Care',
-    jobTitle: 'Software Developer',
-    location: 'Calgary',
+    imageUrl: "/images/work-experience/cf.png",
+    company: "Child Friendly Care",
+    jobTitle: "Software Developer",
+    location: "Calgary",
     dateRange: {
-      startDate: 'May 2020',
-      endDate: 'May 2021',
+      startDate: "May 2020",
+      endDate: "May 2021",
     },
     description: [
       `Developed a full stack enterprise resource planning web application as part of a daycare SaaS start-up.
       Technologies used include Cosmos DB, Azure Functions with C# for serverless API backend, and Vue.js for single page application.`,
     ],
     achievements: [
-      'Designed and implemented the database schema and business rules for:',
-      'Operations microservice to allow administration staff to perform CRUD operations on programs and track the timing of student arrivals and departures and their associated charges.',
-      'Payment microservice that handles various forms of payment and interfacing with third party APIs like QuickBooks and Rotessa.',
-      'Designed and implemented an overall Cosmos DB data storage strategy and CI/CD pipelines for our various microservices.',
+      "Designed and implemented payment processing",
+      "Created functionality to allow for the transfer of financial information data functionality between our web app and QuickBooks through REST API calls.",
+      "Setup and manage Azure CI/CD pipelines and test coverage for our various microservices.",
     ],
   },
   {
-    imageUrl: '/images/work-experience/atco.png',
-    company: 'ATCO Gas Transmission',
-    jobTitle: 'Intern, Facilities Engineering',
-    location: 'Edmonton',
+    imageUrl: "/images/work-experience/atco.png",
+    company: "ATCO Gas Transmission",
+    jobTitle: "Intern, Facilities Engineering",
+    location: "Edmonton",
     dateRange: {
-      startDate: 'May 2017',
-      endDate: 'August 2018',
+      startDate: "May 2017",
+      endDate: "August 2018",
     },
     description: [
       `Designed meter station installations, upgrades and removals
@@ -58,7 +58,7 @@ const workExperience: Array<IWorkExperience> = [
       drafting and construction crews on projects.`,
       `Designed meter station layouts, prepared drawings and job procedures
       and calculated equipment sizing for pressure control and pipeline.`,
-      'Selected material for piping and station equipment installation.',
+      "Selected material for piping and station equipment installation.",
     ],
     achievements: [
       `Designed a brand-new meter station to replace an old meter station
@@ -70,32 +70,32 @@ const workExperience: Array<IWorkExperience> = [
     ],
   },
   {
-    imageUrl: '/images/work-experience/cnrl.png',
-    company: 'Canadian Natural Resources Limited',
-    jobTitle: 'Summer Student, Relief Operator',
-    location: 'Lloydminster',
+    imageUrl: "/images/work-experience/cnrl.png",
+    company: "Canadian Natural Resources Limited",
+    jobTitle: "Summer Student, Relief Operator",
+    location: "Lloydminster",
     dateRange: {
-      startDate: 'May 2016',
-      endDate: 'August 2016',
+      startDate: "May 2016",
+      endDate: "August 2016",
     },
     description: [
       `Operated 34 heavy oil wells in Marshall
       and Lone Rock oil fields within Lloydminster district.`,
-      'Performed maintenance and production data entry.',
+      "Performed maintenance and production data entry.",
       `Optimized heavy oil wells which included shooting
       fluid level and adjusting pump speeds.`,
-      'Organized various well services and rig work when wells were down.',
+      "Organized various well services and rig work when wells were down.",
     ],
     achievements: null,
   },
   {
-    imageUrl: '/images/work-experience/uofc.png',
-    company: 'University of Calgary',
-    jobTitle: 'Leader',
-    location: 'Calgary',
+    imageUrl: "/images/work-experience/uofc.png",
+    company: "University of Calgary",
+    jobTitle: "Leader",
+    location: "Calgary",
     dateRange: {
-      startDate: 'July 2015',
-      endDate: 'August 2015',
+      startDate: "July 2015",
+      endDate: "August 2015",
     },
     description: [
       `Supervised young attendees, prepared new activities and
